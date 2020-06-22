@@ -16,6 +16,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
      */
     public Pantalla_Principal() {
         initComponents();
+        String b="Chocolate";
+            System.out.println(b);
     }
 
     /**
