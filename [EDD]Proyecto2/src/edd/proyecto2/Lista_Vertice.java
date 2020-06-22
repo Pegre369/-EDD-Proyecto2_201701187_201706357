@@ -26,25 +26,21 @@ public class Lista_Vertice {
             
         }else{
             
-            Vertice tmp = Cabeza.Siguiente;
+            Vertice tmp = Cabeza;
             
-            while(tmp != null){
-                
+            while(tmp.Siguiente != null){
                 
                 tmp = tmp.Siguiente;
                 
-                
             }
             
-            
+            tmp.Siguiente = nuevo;
             
         }
-        
-        
-        
+
     }
     
-    public void Buscar(){
+    public void Buscar(String City){
         
     }
 }

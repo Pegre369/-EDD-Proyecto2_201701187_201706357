@@ -13,6 +13,10 @@ public class Vertice {
         this.Ciudad = Ciudad;
         this.Siguiente = null;
     }
+
+    public String getCiudad() {
+        return Ciudad;
+    }
     
     
     
