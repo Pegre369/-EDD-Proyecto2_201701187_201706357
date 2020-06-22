@@ -16,8 +16,8 @@ public class EDDProyecto2 {
      */
     public static void main(String[] args) {
             int a = 2467855;
-            
-            System.out.println(a);
+            String b="Chocolate";
+            System.out.println(b);
     }
     
 }
