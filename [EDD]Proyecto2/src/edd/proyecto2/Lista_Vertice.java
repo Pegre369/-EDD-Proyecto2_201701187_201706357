@@ -235,6 +235,66 @@ public class Lista_Vertice {
         return contenr;
     }
     
+    //Creacion de Grafo
+    public void graficar_grafo(){
+       
+         contenido = "digraph G {\n rankdir=LR \n";
+         FileWriter documento = null;
+         PrintWriter crear;
+         String nombredot = "Grafo.dot";
+         String direccion = "Grafo.png";
+              
+         contenido = contenido + cuerpo_Grafo(Cabeza) +"\n";
+         contenido = contenido + "}";
+        
+         try {
+                documento = new FileWriter(nombredot);
+                crear = new PrintWriter(documento);
+                crear.print(contenido);
+                crear.close();
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
+         
+           try {
+                Runtime.getRuntime().exec("dot -Tpng " + nombredot + " -o " + direccion);
+            } catch (Exception e) {
+                System.err.println("");
+            }
+           
+    }
+    
+    private String cuerpo_Grafo(Vertice Head){
+        
+        String contenr="";
+        Vertice temp = Head;
+        
+        
+        while(temp!=null){
+        
+            
+            Rutas tempA = temp.arista.Cabeza;
+
+            while(tempA!=null){
+               
+                           
+              
+            
+                    contenr = contenr + tempA.getLugar_Origen() +"->"+ tempA.getLugar_Destino()+"[label ="+ String.valueOf(tempA.getTiempo()) +",dir=none];\n";
+                               
+             
+                
+                tempA = tempA.Siguiente;
+                
+            }
+            
+          
+            temp = temp.Siguiente;
+        
+        }
+        
+        return contenr;
+    }
 }
 
 

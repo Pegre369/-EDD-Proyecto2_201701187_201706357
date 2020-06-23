@@ -44,6 +44,7 @@ public class Cargar_Rutas {
         
         Pantalla_Principal.List_Vertice.mostrar(Pantalla_Principal.List_Vertice.Cabeza);
         Pantalla_Principal.List_Vertice.graficar();
+        Pantalla_Principal.List_Vertice.graficar_grafo();
        
  }
  
