@@ -1,7 +1,9 @@
 package edd.proyecto2;
+import Nodos.Vertice;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+
 /**
  *
  * @author Casca
@@ -24,12 +26,24 @@ public class Cargar_Rutas {
             }else{
                 Pantalla_Principal.jTextArea1.append(datosfinale[0]+"\n"+datosfinale[1]+"\n"+datosfinale[2]+"\n");
                 
+                //Vertices
+                Pantalla_Principal.List_Vertice.Insertar(datosfinale[0]);
+                Pantalla_Principal.List_Vertice.Insertar(datosfinale[1]);
+                
+                //Aristas
+                Vertice ingresar_aristas = Pantalla_Principal.List_Vertice.Buscar(datosfinale[0], Pantalla_Principal.List_Vertice.Cabeza);
+                ingresar_aristas.agregar_arista(datosfinale[0], datosfinale[1], Integer.parseInt(datosfinale[2]));
+                Pantalla_Principal.List_Vertice.insertar_arisa(Pantalla_Principal.List_Vertice.Cabeza, ingresar_aristas);
+                        
             }
             
             //System.out.println(datosseparados[i]);
             
             
         }
+        
+        Pantalla_Principal.List_Vertice.mostrar(Pantalla_Principal.List_Vertice.Cabeza);
+        Pantalla_Principal.List_Vertice.graficar();
        
  }
  

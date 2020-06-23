@@ -6,7 +6,7 @@ package Nodos;
  */
 public class Rutas {
 
-
+    public Rutas Siguiente;
     private String Lugar_Origen;
     private String Lugar_Destino;
     private int Tiempo;

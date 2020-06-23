@@ -1,0 +1,33 @@
+digraph G {
+ rankdir=LR 
+ node[shape=box];
+Oviedo[ label = "Oviedo", fontsize=12]; 
+Bilbao[ label = "Bilbao", fontsize=12];
+Zaragoza[ label = "Zaragoza", fontsize=12];
+Madrid[ label = "Madrid", fontsize=12];
+Valladolid[ label = "Valladolid", fontsize=12];
+Barcelona[ label = "Barcelona", fontsize=12];
+Gerona[ label = "Gerona", fontsize=12];
+Oviedo->Bilbao[constraint=false];
+Bilbao->Zaragoza[constraint=false];
+Zaragoza->Madrid[constraint=false];
+Madrid->Valladolid[constraint=false];
+Valladolid->Barcelona[constraint=false];
+Barcelona->Gerona[constraint=false];
+
+Bilbao1[ label = "Bilbao", fontsize=12]; 
+Zaragoza2[ label = "Zaragoza", fontsize=12]; 
+Madrid3[ label = "Madrid", fontsize=12]; 
+Valladolid4[ label = "Valladolid", fontsize=12]; 
+Barcelona5[ label = "Barcelona", fontsize=12]; 
+Madrid6[ label = "Madrid", fontsize=12]; 
+Gerona7[ label = "Gerona", fontsize=12]; 
+Oviedo->Bilbao1;
+Bilbao->Zaragoza2;
+Zaragoza2->Madrid3;
+Madrid3->Valladolid4;
+Zaragoza->Barcelona5;
+Barcelona5->Madrid6;
+Barcelona->Gerona7;
+
+}
