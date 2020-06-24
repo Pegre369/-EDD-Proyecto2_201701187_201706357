@@ -13,10 +13,13 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
   public static Lista_Vertice List_Vertice = new Lista_Vertice();
   public static int[][] Recorridos;
-    
+  //public static String a = "prueba";
     public Pantalla_Principal() {
         initComponents();
-        
+         ImageIcon imagen = new ImageIcon("Corredor.png");
+        Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_DEFAULT));
+        jLabel1.setIcon(logo);
+        this.repaint();
         String b="Chocolate";
             System.out.println(b);
     }
@@ -29,6 +32,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -57,13 +61,17 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(30, 110, 640, 480);
+        jLabel1.setBounds(590, 30, 190, 170);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Llega Rapidito");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(390, 30, 250, 60);
+        jLabel2.setBounds(270, 70, 250, 60);
+
+        jLabel3.setText("jLabel1");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(30, 240, 590, 480);
 
         jMenu2.setText("Clientes");
         jMenu2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -117,6 +125,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem9.setText("Manual");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu10.add(jMenuItem9);
 
         jMenuItem10.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -127,6 +140,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem11.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem11.setText("Mostrar");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem11);
 
         jMenuBar1.add(jMenu4);
@@ -165,17 +183,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1076, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
         );
 
         pack();
@@ -191,16 +203,25 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         ImageIcon imagen = new ImageIcon("Grafo.png");
-        Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_DEFAULT));
-        jLabel1.setIcon(logo);
+        Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel3.getWidth(),jLabel3.getHeight(), Image.SCALE_DEFAULT));
+        jLabel3.setIcon(logo);
         this.repaint();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    
-    
-    
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        
+        Conductores mostrar = new Conductores();
+        mostrar.show();
+       this.setExtendedState(ICONIFIED);
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        //System.out.println(a);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+     
     
     
     /**
@@ -241,6 +262,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
