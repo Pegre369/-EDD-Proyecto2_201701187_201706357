@@ -12,18 +12,19 @@ public class Lista_Vertice {
     public Vertice Cabeza;
     private String contenido;
     private int contador;
+    public static int poss=0;
     
     public Lista_Vertice() {
     
          Cabeza = null;
-        
+         
     }
  
     
     public void Insertar(String Ciudad){
         
         Vertice nuevo = new Vertice(Ciudad); 
-        
+        nuevo.posicion = poss;
         Vertice Buscar = Buscar(Ciudad, Cabeza);
         
         if(Buscar != null){
@@ -32,8 +33,9 @@ public class Lista_Vertice {
         
         if(Cabeza==null){
             
-            Cabeza = nuevo;
             
+            Cabeza = nuevo;
+            poss++;
             
         }else{
             
@@ -46,7 +48,7 @@ public class Lista_Vertice {
             }
             
             tmp.Siguiente = nuevo;
-            
+            poss++;
         }
 
     }
@@ -79,7 +81,7 @@ public class Lista_Vertice {
         
         while(tmp != null){
             
-            System.out.print(tmp.getCiudad() + " -> ");
+            System.out.print(tmp.getPosicion()+ tmp.getCiudad() + " -> ");
             tmp = tmp.Siguiente;
             
         }
@@ -295,6 +297,47 @@ public class Lista_Vertice {
         
         return contenr;
     }
+    
+    public int[][] llenar_matriz(int tam){
+        
+      int MatrizA[][] = new int[tam][tam];
+      
+      //Primero obtenemos la posicion de x(de la columna vertical)
+      Vertice aux = Cabeza;
+      while(aux!=null){
+      
+          int x = aux.posicion;
+          
+          //Segundoo vamos a obtener la posicion en y(de la columna horizontal)
+          Rutas aux2 = aux.arista.Cabeza; 
+          
+          while(aux2!=null){
+             
+              Vertice bus = Buscar(aux2.getLugar_Destino(), Cabeza);
+              
+              if(bus!=null){
+                
+                  int y = bus.posicion;
+                  
+                  MatrizA[x][y] = aux2.getTiempo();
+                  
+              }
+              
+              aux2 = aux2.Siguiente;
+              
+          }
+          
+          
+          aux=aux.Siguiente;
+          
+      }
+      
+        
+       return MatrizA; 
+    }
+    
+    
+    
 }
 
 

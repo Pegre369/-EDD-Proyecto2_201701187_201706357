@@ -1,8 +1,11 @@
 package edd.proyecto2;
 import Nodos.Vertice;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -24,7 +27,7 @@ public class Cargar_Rutas {
             
                 
             }else{
-                Pantalla_Principal.jTextArea1.append(datosfinale[0]+"\n"+datosfinale[1]+"\n"+datosfinale[2]+"\n");
+                //Pantalla_Principal.jTextArea1.append(datosfinale[0]+"\n"+datosfinale[1]+"\n"+datosfinale[2]+"\n");
                 
                 //Vertices
                 Pantalla_Principal.List_Vertice.Insertar(datosfinale[0]);
@@ -42,10 +45,19 @@ public class Cargar_Rutas {
             
         }
         
-        Pantalla_Principal.List_Vertice.mostrar(Pantalla_Principal.List_Vertice.Cabeza);
+        //Pantalla_Principal.List_Vertice.mostrar(Pantalla_Principal.List_Vertice.Cabeza);
         Pantalla_Principal.List_Vertice.graficar();
         Pantalla_Principal.List_Vertice.graficar_grafo();
-       
+        Pantalla_Principal.Recorridos = new int[Lista_Vertice.poss][Lista_Vertice.poss];
+        Pantalla_Principal.Recorridos = Pantalla_Principal.List_Vertice.llenar_matriz(Lista_Vertice.poss);
+        
+        for(int fil=0; fil<Lista_Vertice.poss;fil++){
+            for(int col=0; col<Lista_Vertice.poss;col++){
+                System.out.print(Pantalla_Principal.Recorridos[fil][col]+" || ");
+            }
+            System.out.println("");
+        }
+        
  }
  
  
