@@ -1,8 +1,11 @@
 package edd.proyecto2;
 import Nodos.Vertice;
 import Nodos.Rutas;
+import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.Collections;
+
 /**
  *
  * @author Casca
@@ -74,6 +77,28 @@ public class Lista_Vertice {
         return null;
         
     }
+    
+     public Vertice BuscarXNodo(int City, Vertice inicio){
+        
+        Vertice aux = inicio;
+        
+        while(aux != null){
+            
+            if(City == aux.getPosicion()){
+                
+                return aux;
+                
+            }else{
+                
+                aux = aux.Siguiente;
+                
+            }
+                     
+        }
+        
+        return null;
+        
+    }
 
     public void mostrar(Vertice inicio){
         
@@ -112,7 +137,7 @@ public class Lista_Vertice {
 
     public void graficar(){
         contador = 1;
-         contenido = "digraph G {\n rankdir=LR \n node[shape=box];\n";
+         contenido = "digraph G {\n rankdir=LR \n node[shape=box];\ngraph [ dpi = 300 ];\n";
          FileWriter documento = null;
          PrintWriter crear;
          String nombredot = "Lista_Adyasente.dot";
@@ -240,7 +265,7 @@ public class Lista_Vertice {
     //Creacion de Grafo
     public void graficar_grafo(){
        
-         contenido = "digraph G {\n rankdir=LR \n";
+         contenido = "digraph G {\nrankdir=LR\ngraph [ dpi = 300 ];\n";
          FileWriter documento = null;
          PrintWriter crear;
          String nombredot = "Grafo.dot";
@@ -336,7 +361,102 @@ public class Lista_Vertice {
        return MatrizA; 
     }
     
-    
+    public void Ruta(int [][] MatrizAdyasente, String origen, String destino, int tam){
+        
+        int [][] tabla = new int[tam][3];
+        
+        for(int n=0; n<tam; n++){
+            
+            tabla[n][0]=0;
+            tabla[n][1]= Integer.MAX_VALUE;
+            tabla[n][0]=0;
+            
+        }
+        
+        Vertice inicio = Buscar(origen, Cabeza);
+        
+        int Inic;
+        
+        if(inicio != null){
+            Inic = inicio.posicion;
+        }else{
+            return;
+        }
+        
+        tabla[Inic][1]=0;
+        
+        int actual = Inic;
+        
+        do{
+            
+            tabla[actual][0]=1;
+            
+            for(int col = 0; col < tam; col++){
+                
+                if(Pantalla_Principal.Recorridos[actual][col]!=0){
+                    
+                    int distancia = Pantalla_Principal.Recorridos[actual][col] + tabla[actual][1];
+                    
+                    if(distancia<tabla[col][1]){
+                        
+                        tabla[col][1] = distancia;
+                        tabla[col][2] = actual;
+                        
+                    }                  
+                    
+                }
+                
+            }
+            
+            int indiceMenor =-1;
+            int distanciaMenor = Integer.MAX_VALUE;
+            
+            for(int x =0; x<tam; x++){
+                
+                if(tabla[x][1]<distanciaMenor && tabla[x][0]==0){
+                    indiceMenor  = x;
+                    distanciaMenor = tabla[x][1];
+                }
+                
+            }
+            
+            actual = indiceMenor;
+            
+        }while(actual!=-1);
+        
+
+        ArrayList<Integer> ruta = new ArrayList<Integer>();
+        
+        int nodo;
+        
+        Vertice fin = Buscar(destino, Cabeza);
+         if(fin != null){
+            nodo = fin.posicion;
+        }else{
+            return;
+        }
+         
+         while(nodo!= Inic){
+             ruta.add(nodo);
+             nodo = tabla[nodo][2];
+         }
+         ruta.add(Inic);
+         Collections.reverse(ruta);
+         
+         
+        String name = "";
+        int time;
+        
+         for (int pos : ruta) 
+        { 
+           Vertice Ciudad_encontrada = BuscarXNodo(pos, Cabeza);
+              
+            
+            System.out.println(pos + "->" + Ciudad_encontrada.getCiudad()+"->"+tabla[pos][1]);
+        }
+         
+        
+    }  
     
 }
 

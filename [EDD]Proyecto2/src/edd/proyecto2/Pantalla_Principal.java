@@ -12,11 +12,14 @@ import javax.swing.ImageIcon;
 public class Pantalla_Principal extends javax.swing.JFrame {
 
   public static Lista_Vertice List_Vertice = new Lista_Vertice();
+  public static Lista_Arista List_Recorrido = new Lista_Arista();
   public static int[][] Recorridos;
+  
   //public static String a = "prueba";
     public Pantalla_Principal() {
         initComponents();
-         ImageIcon imagen = new ImageIcon("Corredor.png");
+        jButton2.setEnabled(false);
+        ImageIcon imagen = new ImageIcon("Corredor.png");
         Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_DEFAULT));
         jLabel1.setIcon(logo);
         this.repaint();
@@ -33,6 +36,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -71,7 +75,20 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel1");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(30, 240, 590, 480);
+        jLabel3.setBounds(40, 200, 590, 480);
+
+        jButton2.setBackground(new java.awt.Color(0, 102, 153));
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Crear Viaje");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(750, 360, 230, 70);
 
         jMenu2.setText("Clientes");
         jMenu2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -113,6 +130,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem8.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem8.setText("Mostrar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenuBar1.add(jMenu3);
@@ -187,7 +209,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
@@ -206,6 +228,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel3.getWidth(),jLabel3.getHeight(), Image.SCALE_DEFAULT));
         jLabel3.setIcon(logo);
         this.repaint();
+
+        if(List_Vertice!=null){
+            jButton2.setEnabled(true);
+        }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
@@ -220,6 +246,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         //System.out.println(a);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+       
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        List_Vertice.Ruta(Recorridos, "Oviedo", "Madrid", Lista_Vertice.poss);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
      
     
@@ -260,6 +296,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;

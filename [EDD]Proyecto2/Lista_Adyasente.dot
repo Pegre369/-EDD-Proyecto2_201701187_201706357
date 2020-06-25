@@ -1,6 +1,7 @@
 digraph G {
  rankdir=LR 
  node[shape=box];
+graph [ dpi = 300 ];
 Oviedo[ label = "Oviedo", fontsize=12]; 
 Bilbao[ label = "Bilbao", fontsize=12];
 Zaragoza[ label = "Zaragoza", fontsize=12];
