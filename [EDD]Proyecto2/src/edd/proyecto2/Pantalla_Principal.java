@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
  */
 public class Pantalla_Principal extends javax.swing.JFrame {
 
-  public static Lista_Vertice List_Vertice = new Lista_Vertice();
+  public static Lista_Vertice List_Vertice = new Lista_Vertice(); // <- Algo asi tenes que crear el arbol, el nodo para el arbol se llama vehiculo, en sigular
   public static Lista_Arista List_Recorrido = new Lista_Arista();
   public static int[][] Recorridos;
   

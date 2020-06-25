@@ -51,6 +51,34 @@ public class Cliente {
     public String getDireccion() {
         return Direccion;
     }
+
+    public void setDpi(BigInteger Dpi) {
+        this.Dpi = Dpi;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
+    }
+
+    public void setGenero(String Genero) {
+        this.Genero = Genero;
+    }
+
+    public void setFechaNac(String FechaNac) {
+        this.FechaNac = FechaNac;
+    }
+
+    public void setTelefono(int Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
        
     
     

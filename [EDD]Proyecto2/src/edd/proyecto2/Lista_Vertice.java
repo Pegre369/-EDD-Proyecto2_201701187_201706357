@@ -369,7 +369,7 @@ public class Lista_Vertice {
             
             tabla[n][0]=0;
             tabla[n][1]= Integer.MAX_VALUE;
-            tabla[n][0]=0;
+            tabla[n][2]=0;
             
         }
         
