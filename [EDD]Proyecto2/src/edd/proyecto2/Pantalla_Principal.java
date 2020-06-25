@@ -13,6 +13,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
   public static Lista_Vertice List_Vertice = new Lista_Vertice(); // <- Algo asi tenes que crear el arbol, el nodo para el arbol se llama vehiculo, en sigular
   public static Lista_Arista List_Recorrido = new Lista_Arista();
+  public ArbolB vehiculoRoot = new ArbolB(5);
   public static int[][] Recorridos;
   
   //public static String a = "prueba";
@@ -120,6 +121,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem6.setText("Manual");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem6);
 
         jMenuItem7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -256,6 +262,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         List_Vertice.Ruta(Recorridos, "Oviedo", "Madrid", Lista_Vertice.poss);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Entra a registrar manualmente");
+        Vehiculos ventanaV = new Vehiculos();
+        ventanaV.setRootTree(this.vehiculoRoot);
+        ventanaV.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
      
     

@@ -5,6 +5,7 @@
  */
 package edd.proyecto2;
 
+import Nodos.Vehiculo;
 import java.awt.Image;
 import java.math.BigInteger;
 import javax.swing.Icon;
@@ -15,7 +16,7 @@ import javax.swing.ImageIcon;
  * @author Casca
  */
 public class Vehiculos extends javax.swing.JFrame {
-
+    ArbolB root;
     /**
      * Creates new form Vehiculos
      */
@@ -25,6 +26,10 @@ public class Vehiculos extends javax.swing.JFrame {
         Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_DEFAULT));
         jLabel1.setIcon(logo);
         this.repaint();
+    }
+    
+    public void setRootTree(ArbolB root){
+        this.root=root;
     }
 
     /**
@@ -216,7 +221,15 @@ public class Vehiculos extends javax.swing.JFrame {
      String Color = jTextField4.getText();
      String Precio = jTextField9.getText();
      String Transmision = (String) jComboBox1.getSelectedItem();
-        
+     Vehiculo temp = this.root.searchPlaca(root, Placa);
+     if(temp==null){
+         this.root=this.root.Insertar( new Vehiculo(Placa, Marca, Modelo,  anio,  Color,  Precio,  Transmision));
+         System.out.println("Vehiculo Registrado");
+         this.root.imprimirArbol(root);
+     }else{
+         //Aqui va un mensaje emergente
+         System.out.println("Placa repitda");
+     }
      /*Primero en la pantalla principal creas el arbol com lo hago con las listar de rutas, asi no perdemos los datos
         luego de crearla en la pantalla principal, vos aca la llamas algo asi
      
