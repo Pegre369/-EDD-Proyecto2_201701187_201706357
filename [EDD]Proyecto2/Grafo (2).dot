@@ -1,0 +1,12 @@
+digraph G {
+rankdir=LR
+graph [ dpi = 300 ];
+Oviedo->Bilbao[label =304,dir=none];
+Bilbao->Zaragoza[label =324,dir=none];
+Bilbao->Madrid[label =395,dir=none];
+Bilbao->Valladolid[label =280,dir=none];
+Zaragoza->Barcelona[label =296,dir=none];
+Zaragoza->Madrid[label =325,dir=none];
+Barcelona->Gerona[label =100,dir=none];
+
+}
