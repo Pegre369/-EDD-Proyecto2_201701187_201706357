@@ -223,7 +223,7 @@ public class Vehiculos extends javax.swing.JFrame {
      String Transmision = (String) jComboBox1.getSelectedItem();
      Vehiculo temp = this.root.searchPlaca(root, Placa);
      if(temp==null){
-         this.root=this.root.Insertar( new Vehiculo(Placa, Marca, Modelo,  anio,  Color,  Precio,  Transmision));
+         root=this.root.Insertar( new Vehiculo(Placa, Marca, Modelo,  anio,  Color,  Precio,  Transmision));
          System.out.println("Vehiculo Registrado");
          this.root.imprimirArbol(root);
      }else{
