@@ -56,6 +56,7 @@ public class ArbolB {
         return getRoot();
     }
 
+    
     private void InsertarVehiculo(ArbolB node, Vehiculo e, ArbolB eNode) {
         int valueIndex = 0;
         while(valueIndex < node.values.size() && node.values.get(valueIndex).getPlaca().compareTo(e.getPlaca()) < 0) {
