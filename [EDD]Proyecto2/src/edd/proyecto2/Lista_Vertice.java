@@ -1,8 +1,11 @@
 package edd.proyecto2;
 import Nodos.Vertice;
 import Nodos.Rutas;
+import java.awt.Desktop;
+import java.io.File;
 import java.util.ArrayList;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collections;
 
@@ -158,12 +161,28 @@ public class Lista_Vertice {
          
            try {
                 Runtime.getRuntime().exec("dot -Tpng " + nombredot + " -o " + direccion);
+                //abrirarchivo(direccion);
+
             } catch (Exception e) {
                 System.err.println("");
             }
            
     }
     
+    public void abrirarchivo(String archivo){
+
+     try {
+
+            File objetofile = new File (archivo);
+            Desktop.getDesktop().open(objetofile);
+
+     }catch (IOException ex) {
+
+            System.out.println(ex);
+
+     }
+
+}
     //Creacion de nodos
     private String cuerpo(Vertice Head){
         
