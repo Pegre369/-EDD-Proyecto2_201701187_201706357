@@ -2,6 +2,8 @@
 package edd.proyecto2;
 
 import java.awt.Image;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -15,7 +17,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Arista List_Recorrido = new Lista_Arista();
   public static Lista_Conductores List_Conductores = new Lista_Conductores();
   public static int[][] Recorridos;
-  
+  public static ArbolB vehiculoRoot = new ArbolB(5);
   //public static String a = "prueba";
     public Pantalla_Principal() {
         initComponents();
@@ -49,6 +51,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
@@ -135,6 +138,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem7.setText("Carga Masiva");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem7);
 
         jMenu3.add(jMenu9);
@@ -147,6 +155,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem8);
+
+        jMenuItem11.setText("Editar-Eliminar");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem11);
 
         jMenuBar1.add(jMenu3);
 
@@ -304,11 +320,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         //List_Vertice.Ruta(Recorridos, "Oviedo", "Madrid", Lista_Vertice.poss);
+        this.vehiculoRoot=this.vehiculoRoot.getRoot();
+        this.graficarC(this.vehiculoRoot.obtenerGrafo(this.vehiculoRoot), "ArbolB_Vehiculos");
+        System.out.println("");
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Vehiculos mostrar = new Vehiculos();
-        mostrar.show();
+       System.out.println("Entra a registrar manualmente");
+        Vehiculos ventanaV = new Vehiculos();
+        ventanaV.setRootTree(this.vehiculoRoot);
+        ventanaV.show();
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -335,8 +356,47 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        VehiculosEditDelete vehiculosED = new VehiculosEditDelete();
+        this.vehiculoRoot=this.vehiculoRoot.getRoot();
+        vehiculosED.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        Seleccionar_Archivo2 iniciar = new Seleccionar_Archivo2();
+        iniciar.show();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
      
-    
+    public void graficarC(String cuerpo, String nombre){
+         String contenido;
+         contenido = "digraph G {\n";
+         FileWriter documento = null;
+         PrintWriter crear;
+         String nombredot = nombre+".dot";
+         String direccion = nombre+".png";
+         contenido += cuerpo;
+         contenido = contenido + "}";
+        
+         try {
+                documento = new FileWriter(nombredot);
+                crear = new PrintWriter(documento);
+                crear.print(contenido);
+                crear.close();
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
+         
+           try {
+                Runtime.getRuntime().exec("dot -Tpng " + nombredot + " -o " + direccion);
+            } catch (Exception e) {
+                System.err.println("");
+            }
+        
+    }
     
     /**
      * @param args the command line arguments
@@ -391,6 +451,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
