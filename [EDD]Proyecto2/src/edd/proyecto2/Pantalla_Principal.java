@@ -18,6 +18,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Conductores List_Conductores = new Lista_Conductores();
   public static int[][] Recorridos;
   public static ArbolB vehiculoRoot = new ArbolB(5);
+  
   //public static String a = "prueba";
     public Pantalla_Principal() {
         initComponents();
