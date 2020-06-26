@@ -1,3 +1,4 @@
+
 package edd.proyecto2;
 
 import java.awt.Image;
@@ -12,11 +13,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
   public static Lista_Vertice List_Vertice = new Lista_Vertice(); 
   public static Lista_Arista List_Recorrido = new Lista_Arista();
-<<<<<<< HEAD
   public static Lista_Conductores List_Conductores = new Lista_Conductores();
-=======
-  public ArbolB vehiculoRoot = new ArbolB(5);
->>>>>>> 8737a521721f58dea01b5af46aec23e4153b5f86
   public static int[][] Recorridos;
   
   //public static String a = "prueba";
@@ -310,7 +307,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-<<<<<<< HEAD
         Vehiculos mostrar = new Vehiculos();
         mostrar.show();
         this.setExtendedState(ICONIFIED);
@@ -338,15 +334,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem16ActionPerformed
-=======
-        // TODO add your handling code here:
-        System.out.println("Entra a registrar manualmente");
-        Vehiculos ventanaV = new Vehiculos();
-        ventanaV.setRootTree(this.vehiculoRoot);
-        ventanaV.show();
-        this.setExtendedState(ICONIFIED);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
->>>>>>> 8737a521721f58dea01b5af46aec23e4153b5f86
 
      
     
