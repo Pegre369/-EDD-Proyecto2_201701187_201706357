@@ -6,8 +6,6 @@ import java.math.*;
  */
 public class Conductor {
     
-    public Conductor Siguiente;
-    public Conductor Anterior;
     private BigInteger Dpi;
     private String Nombre;
     private String Apellido;
@@ -18,8 +16,6 @@ public class Conductor {
     private String Direccion;
 
     public Conductor(BigInteger Dpi, String Nombre, String Apellido, String Licencia, String Genero, String FechaNac, int Telefono, String Direccion) {
-        this.Siguiente = null;
-        this.Anterior = null;
         this.Dpi = Dpi;
         this.Nombre = Nombre;
         this.Apellido = Apellido;

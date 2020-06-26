@@ -56,6 +56,7 @@ public class ArbolB {
         return getRoot();
     }
 
+    
     private void InsertarVehiculo(ArbolB node, Vehiculo e, ArbolB eNode) {
         int valueIndex = 0;
         while(valueIndex < node.values.size() && node.values.get(valueIndex).getPlaca().compareTo(e.getPlaca()) < 0) {
@@ -98,7 +99,7 @@ public class ArbolB {
         }
         ArbolB p = getRoot().search(e.getPlaca());
         if(p.paginaVacia()) {
-            throw new RuntimeException("the key to be deleted is not exist, key: " + e);
+            throw new RuntimeException("Esta Placa no existe: " + e.getPlaca());
         }
         int valueIndex = 0;
         while(valueIndex < p.values.size() && p.values.get(valueIndex).getPlaca().compareTo(e.getPlaca()) < 0) {

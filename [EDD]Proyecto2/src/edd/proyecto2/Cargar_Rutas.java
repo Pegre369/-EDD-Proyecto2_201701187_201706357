@@ -15,7 +15,7 @@ public class Cargar_Rutas {
 
  public static void begin() {
      
-       String respuesta=leerArchivo(Seleccionar_Archivo_Ruta.ruta);
+       String respuesta=leerArchivo(Seleccionar_Archivo.ruta);
        
        String [] datosseparados = respuesta.split("%");
        

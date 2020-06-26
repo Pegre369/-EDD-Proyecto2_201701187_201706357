@@ -188,7 +188,7 @@ public class Conductores extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 102, 153));
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Registrar");
+        jButton2.setText("Guardar");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,14 +245,12 @@ public class Conductores extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        String dpi ="",nombre="",apellido="",licencia="",genero="",fecha="", Direccion="";
-       int telefono=0;
-       
+       String dpi,nombre,apellido,licencia,genero,fecha, Direccion;
+       int telefono;
        
        dpi = jTextField2.getText();
        nombre = jTextField3.getText();
-       apellido = jTextField7.getText();
+       apellido = jTextField4.getText();
        licencia = (String) jComboBox2.getSelectedItem();
        genero = (String) jComboBox1.getSelectedItem();
        fecha = jTextField5.getText()+"/"+jTextField6.getText()+"/"+jTextField1.getText();
@@ -264,18 +262,9 @@ public class Conductores extends javax.swing.JFrame {
             telefono = Integer.valueOf(jTextField8.getText());
             BigInteger DPI = new BigInteger(dpi);
             
-            Pantalla_Principal.List_Conductores.insertar(DPI, nombre, apellido, licencia, genero, fecha, telefono, Direccion);
-            Pantalla_Principal.List_Conductores.mostrar(Pantalla_Principal.List_Conductores.Cabeza);
+            //luego de las asignaciones se mete a la lista circular
             
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
-            jTextField6.setText("");
-            jTextField1.setText("");
-            jTextField4.setText("");
-            jTextField8.setText("");
-            
+            this.dispose();
             
         } catch (Exception e) {
         

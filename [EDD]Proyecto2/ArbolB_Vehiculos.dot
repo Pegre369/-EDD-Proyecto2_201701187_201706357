@@ -1,0 +1,64 @@
+digraph G {
+ rankdir=TB;
+node [shape = record, style=filled, fillcolor=gray76]; 
+ "edd.proyecto2.ArbolB@53619d9b" [ label ="<C0>| p17lAf17 \n te; Audio; 234 | <C1> | p25lAf25 \n te; cc; 234 | <C2> | p35lAf35 \n te; cc; 234 | <C3> | p43lAf43 \n te; cc; 234 | <C4>  "];
+ "edd.proyecto2.ArbolB@53619d9b":C0 -> "edd.proyecto2.ArbolB@403f3bf1" 
+
+ "edd.proyecto2.ArbolB@403f3bf1" [ label ="<C0>| p11lAf11 \n te; cc; 234 | <C1> | p14lAf14 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@403f3bf1":C0 -> "edd.proyecto2.ArbolB@35595fdc" 
+
+ "edd.proyecto2.ArbolB@35595fdc" [ label ="<C0>| p0lAf0 \n te; cc; 234 | <C1> | p10lAf10 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@403f3bf1":C1 -> "edd.proyecto2.ArbolB@50df2b74" 
+
+ "edd.proyecto2.ArbolB@50df2b74" [ label ="<C0>| p12lAf12 \n te; cc; 234 | <C1> | p13lAf13 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@403f3bf1":C2 -> "edd.proyecto2.ArbolB@f0df9b1" 
+
+ "edd.proyecto2.ArbolB@f0df9b1" [ label ="<C0>| p15lAf15 \n te; cc; 234 | <C1> | p16lAf16 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@53619d9b":C1 -> "edd.proyecto2.ArbolB@3654bb12" 
+
+ "edd.proyecto2.ArbolB@3654bb12" [ label ="<C0>| p1lAf1 \n te; cc; 234 | <C1> | p22lAf22 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@3654bb12":C0 -> "edd.proyecto2.ArbolB@490ca5bb" 
+
+ "edd.proyecto2.ArbolB@490ca5bb" [ label ="<C0>| p18lAf18 \n te; cc; 234 | <C1> | p19lAf19 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@3654bb12":C1 -> "edd.proyecto2.ArbolB@60a1b365" 
+
+ "edd.proyecto2.ArbolB@60a1b365" [ label ="<C0>| p20lAf20 \n te; cc; 234 | <C1> | p21lAf21 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@3654bb12":C2 -> "edd.proyecto2.ArbolB@811eb1" 
+
+ "edd.proyecto2.ArbolB@811eb1" [ label ="<C0>| p23lAf23 \n te; cc; 234 | <C1> | p24lAf24 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@53619d9b":C2 -> "edd.proyecto2.ArbolB@139eb998" 
+
+ "edd.proyecto2.ArbolB@139eb998" [ label ="<C0>| p2lAf2 \n te; cc; 234 | <C1> | p32lAf32 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@139eb998":C0 -> "edd.proyecto2.ArbolB@3f13f72d" 
+
+ "edd.proyecto2.ArbolB@3f13f72d" [ label ="<C0>| p26lAf26 \n te; cc; 234 | <C1> | p27lAf27 \n te; cc; 234 | <C2> | p28lAf28 \n te; cc; 234 | <C3> | p29lAf29 \n te; cc; 234 | <C4>  "];
+ "edd.proyecto2.ArbolB@139eb998":C1 -> "edd.proyecto2.ArbolB@52c45131" 
+
+ "edd.proyecto2.ArbolB@52c45131" [ label ="<C0>| p30lAf30 \n te; cc; 234 | <C1> | p31lAf31 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@139eb998":C2 -> "edd.proyecto2.ArbolB@5ab8a94e" 
+
+ "edd.proyecto2.ArbolB@5ab8a94e" [ label ="<C0>| p33lAf33 \n te; cc; 234 | <C1> | p34lAf34 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@53619d9b":C3 -> "edd.proyecto2.ArbolB@3c8c99f8" 
+
+ "edd.proyecto2.ArbolB@3c8c99f8" [ label ="<C0>| p38lAf38 \n te; cc; 234 | <C1> | p40lAf40 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@3c8c99f8":C0 -> "edd.proyecto2.ArbolB@1c86bbdb" 
+
+ "edd.proyecto2.ArbolB@1c86bbdb" [ label ="<C0>| p36lAf36 \n te; cc; 234 | <C1> | p37lAf37 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@3c8c99f8":C1 -> "edd.proyecto2.ArbolB@6c3b2ca3" 
+
+ "edd.proyecto2.ArbolB@6c3b2ca3" [ label ="<C0>| p39lAf39 \n te; cc; 234 | <C1> | p3lAf3 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@3c8c99f8":C2 -> "edd.proyecto2.ArbolB@73d61ab3" 
+
+ "edd.proyecto2.ArbolB@73d61ab3" [ label ="<C0>| p41lAf41 \n te; cc; 234 | <C1> | p42lAf42 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@53619d9b":C4 -> "edd.proyecto2.ArbolB@2b4d1e68" 
+
+ "edd.proyecto2.ArbolB@2b4d1e68" [ label ="<C0>| p47lAf47 \n te; cc; 234 | <C1> | p5lAf5 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@2b4d1e68":C0 -> "edd.proyecto2.ArbolB@23c20b9" 
+
+ "edd.proyecto2.ArbolB@23c20b9" [ label ="<C0>| p45lAf45 \n te; cc; 234 | <C1> | p44lAf44 \n te; cc; 234 | <C2>  "];
+ "edd.proyecto2.ArbolB@2b4d1e68":C1 -> "edd.proyecto2.ArbolB@37574a69" 
+
+ "edd.proyecto2.ArbolB@37574a69" [ label ="<C0>| p48lAf48 \n te; cc; 234 | <C1> | p49lAf49 \n te; cc; 234 | <C2> | p4lAf4 \n te; cc; 234 | <C3>  "];
+ "edd.proyecto2.ArbolB@2b4d1e68":C2 -> "edd.proyecto2.ArbolB@7417cdb2" 
+
+ "edd.proyecto2.ArbolB@7417cdb2" [ label ="<C0>| p7lAf7 \n te; cc; 234 | <C1> | p8lAf8 \n te; cc; 234 | <C2> | p9lAf9 \n te; cc; 234 | <C3>  "];}

@@ -1,6 +1,9 @@
+
 package edd.proyecto2;
 
 import java.awt.Image;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -10,14 +13,11 @@ import javax.swing.ImageIcon;
  */
 public class Pantalla_Principal extends javax.swing.JFrame {
 
-  public static Lista_Vertice List_Vertice = new Lista_Vertice(); 
+  public static Lista_Vertice List_Vertice = new Lista_Vertice(); // <- Algo asi tenes que crear el arbol, el nodo para el arbol se llama vehiculo, en sigular
   public static Lista_Arista List_Recorrido = new Lista_Arista();
-<<<<<<< HEAD
-  public static Lista_Conductores List_Conductores = new Lista_Conductores();
-=======
-  public ArbolB vehiculoRoot = new ArbolB(5);
->>>>>>> 8737a521721f58dea01b5af46aec23e4153b5f86
+  public static ArbolB vehiculoRoot = new ArbolB(5);
   public static int[][] Recorridos;
+  
   
   //public static String a = "prueba";
     public Pantalla_Principal() {
@@ -52,16 +52,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu11 = new javax.swing.JMenu();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenu12 = new javax.swing.JMenu();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -138,6 +134,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem7.setText("Carga Masiva");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem7);
 
         jMenu3.add(jMenu9);
@@ -150,6 +151,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem8);
+
+        jMenuItem12.setText("Editar-Elimnar");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem12);
 
         jMenuBar1.add(jMenu3);
 
@@ -170,60 +179,18 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem10.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem10.setText("Carga Masiva");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
-            }
-        });
         jMenu10.add(jMenuItem10);
 
         jMenu4.add(jMenu10);
 
-        jMenu11.setText("Otros");
-        jMenu11.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-
-        jMenuItem13.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jMenuItem13.setText("Eliminar");
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem11.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem11.setText("Mostrar");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
+                jMenuItem11ActionPerformed(evt);
             }
         });
-        jMenu11.add(jMenuItem13);
-
-        jMenuItem14.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jMenuItem14.setText("Modificar");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
-            }
-        });
-        jMenu11.add(jMenuItem14);
-
-        jMenu4.add(jMenu11);
-
-        jMenu12.setText("Mostrar");
-        jMenu12.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-
-        jMenuItem15.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jMenuItem15.setText("Informacion");
-        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem15ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jMenuItem15);
-
-        jMenuItem16.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jMenuItem16.setText("Estructura");
-        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem16ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jMenuItem16);
-
-        jMenu4.add(jMenu12);
+        jMenu4.add(jMenuItem11);
 
         jMenuBar1.add(jMenu4);
 
@@ -273,7 +240,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
        
-        Seleccionar_Archivo_Ruta iniciar = new Seleccionar_Archivo_Ruta();
+        Seleccionar_Archivo iniciar = new Seleccionar_Archivo();
         iniciar.show();
         
        
@@ -299,6 +266,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        //System.out.println(a);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        
        
@@ -306,39 +277,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        //List_Vertice.Ruta(Recorridos, "Oviedo", "Madrid", Lista_Vertice.poss);
+        this.vehiculoRoot=this.vehiculoRoot.getRoot();
+        this.graficarC(this.vehiculoRoot.obtenerGrafo(this.vehiculoRoot), "ArbolB_Vehiculos");
+        System.out.println("");
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-<<<<<<< HEAD
-        Vehiculos mostrar = new Vehiculos();
-        mostrar.show();
-        this.setExtendedState(ICONIFIED);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Seleccionar_Archivo_Conductor iniciar = new Seleccionar_Archivo_Conductor();
-        iniciar.show();
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
-
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
-
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-       Modificar_Conductores inicio = new Modificar_Conductores();
-       inicio.show();
-        this.setExtendedState(ICONIFIED);
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
-
-    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem15ActionPerformed
-
-    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem16ActionPerformed
-=======
         // TODO add your handling code here:
         System.out.println("Entra a registrar manualmente");
         Vehiculos ventanaV = new Vehiculos();
@@ -346,8 +290,49 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         ventanaV.show();
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
->>>>>>> 8737a521721f58dea01b5af46aec23e4153b5f86
 
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        VehiculosEditDelete vehiculosED = new VehiculosEditDelete();
+        this.vehiculoRoot=this.vehiculoRoot.getRoot();
+        vehiculosED.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        Seleccionar_Archivo2 iniciar = new Seleccionar_Archivo2();
+        iniciar.show();
+        
+        
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    public void graficarC(String cuerpo, String nombre){
+         String contenido;
+         contenido = "digraph G {\n";
+         FileWriter documento = null;
+         PrintWriter crear;
+         String nombredot = nombre+".dot";
+         String direccion = nombre+".png";
+         contenido += cuerpo;
+         contenido = contenido + "}";
+        
+         try {
+                documento = new FileWriter(nombredot);
+                crear = new PrintWriter(documento);
+                crear.print(contenido);
+                crear.close();
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
+         
+           try {
+                Runtime.getRuntime().exec("dot -Tpng " + nombredot + " -o " + direccion);
+            } catch (Exception e) {
+                System.err.println("");
+            }
+        
+    }
      
     
     
@@ -393,8 +378,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
-    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -404,10 +387,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
