@@ -324,7 +324,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        // TODO add your handling code here:
+          try {
+
+            File objetofile = new File ("Lista_Conductores.png");
+            Desktop.getDesktop().open(objetofile);
+
+         }catch (IOException ex) {
+
+            System.out.println(ex);
+
+          }
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed

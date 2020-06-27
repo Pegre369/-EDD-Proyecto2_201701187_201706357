@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.math.BigInteger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,10 +45,9 @@ public class Carga_Conductores {
         }
         
         Pantalla_Principal.List_Conductores.mostrar(Pantalla_Principal.List_Conductores.Cabeza);
-        
+        Pantalla_Principal.List_Conductores.graficar();
+        JOptionPane.showMessageDialog(null, "Carga Masiva Realizada");
  }
- 
- 
  
  public static String leerArchivo(String ruta){
      

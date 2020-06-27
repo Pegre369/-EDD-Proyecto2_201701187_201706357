@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.math.BigInteger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -266,7 +267,7 @@ public class Conductores extends javax.swing.JFrame {
             
             Pantalla_Principal.List_Conductores.insertar(DPI, nombre, apellido, licencia, genero, fecha, telefono, Direccion);
             Pantalla_Principal.List_Conductores.mostrar(Pantalla_Principal.List_Conductores.Cabeza);
-            
+            Pantalla_Principal.List_Conductores.graficar();
             jTextField2.setText("");
             jTextField3.setText("");
             jTextField4.setText("");
@@ -275,7 +276,7 @@ public class Conductores extends javax.swing.JFrame {
             jTextField1.setText("");
             jTextField4.setText("");
             jTextField8.setText("");
-            
+            JOptionPane.showMessageDialog(null, "Conductor ingresado");
             
         } catch (Exception e) {
         

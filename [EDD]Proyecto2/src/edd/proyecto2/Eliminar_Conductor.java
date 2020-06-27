@@ -7,6 +7,7 @@ package edd.proyecto2;
 
 import Nodos.Conductor;
 import java.math.BigInteger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -257,10 +258,10 @@ public class Eliminar_Conductor extends javax.swing.JFrame {
                 BigInteger DPI_O = new BigInteger(DPI_Original);
 
                 Pantalla_Principal.List_Conductores.eliminar(DPI_O);
-    
+                Pantalla_Principal.List_Conductores.graficar();
                 jComboBox5.removeAllItems();
                 Pantalla_Principal.List_Conductores.mostrar_existente2(Pantalla_Principal.List_Conductores.Cabeza);
-
+                JOptionPane.showMessageDialog(null, "Conductor Eliminado");
             } catch (Exception e) {
 
                 System.out.println(e);

@@ -1,6 +1,7 @@
 package edd.proyecto2;
 import Nodos.Conductor;
 import java.math.BigInteger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -361,7 +362,7 @@ public class Modificar_Conductores extends javax.swing.JFrame {
                         
             Pantalla_Principal.List_Conductores.modificar(DPI, nombre, apellido, licencia, genero, fecha, telefono, Direccion);
             Pantalla_Principal.List_Conductores.mostrar(Pantalla_Principal.List_Conductores.Cabeza);
-
+            Pantalla_Principal.List_Conductores.graficar();
             jTextField2.setText("");
             jTextField3.setText("");
             jTextField7.setText("");
@@ -373,7 +374,7 @@ public class Modificar_Conductores extends javax.swing.JFrame {
             jLabel7.setText("");
             jLabel29.setText("");
             jLabel31.setText("");
-            
+             JOptionPane.showMessageDialog(null, "Conductor Modificado");
 
         } catch (Exception e) {
 
@@ -392,7 +393,7 @@ public class Modificar_Conductores extends javax.swing.JFrame {
             Pantalla_Principal.List_Conductores.eliminar(DPI_O);
             Pantalla_Principal.List_Conductores.insertar(DPI, nombre, apellido, licencia, genero, fecha, telefono, Direccion);
             Pantalla_Principal.List_Conductores.mostrar(Pantalla_Principal.List_Conductores.Cabeza);
-
+            Pantalla_Principal.List_Conductores.graficar();
             jTextField2.setText("");
             jTextField3.setText("");
             jTextField7.setText("");
@@ -406,7 +407,7 @@ public class Modificar_Conductores extends javax.swing.JFrame {
             jLabel31.setText("");
             jComboBox5.removeAllItems();
             Pantalla_Principal.List_Conductores.mostrar_existente(Pantalla_Principal.List_Conductores.Cabeza);
-            
+             JOptionPane.showMessageDialog(null, "Conductor Modificado");
             } catch (Exception e) {
 
             System.out.println(e);

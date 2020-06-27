@@ -1,12 +1,52 @@
 digraph G {
 rankdir=LR
 graph [ dpi = 300 ];
-Oviedo->Bilbao[label =304,dir=none];
-Bilbao->Zaragoza[label =324,dir=none];
-Bilbao->Madrid[label =395,dir=none];
-Bilbao->Valladolid[label =280,dir=none];
+Cadiz->Sevilla[label =125,dir=none];
+Sevilla->Cadiz[label =125,dir=none];
+Sevilla->Granada[label =256,dir=none];
+Sevilla->Jaen[label =242,dir=none];
+Granada->Sevilla[label =256,dir=none];
+Granada->Murcia[label =278,dir=none];
+Jaen->Sevilla[label =242,dir=none];
+Jaen->Madrid[label =335,dir=none];
+Murcia->Granada[label =278,dir=none];
+Murcia->Valencia[label =241,dir=none];
+Murcia->Albacete[label =150,dir=none];
+Madrid->Jaen[label =335,dir=none];
+Madrid->Albacete[label =251,dir=none];
+Madrid->Zaragoza[label =325,dir=none];
+Madrid->Badajoz[label =403,dir=none];
+Madrid->Valladolid[label =193,dir=none];
+Madrid->Bilbao[label =395,dir=none];
+Valencia->Murcia[label =241,dir=none];
+Valencia->Albacete[label =191,dir=none];
+Valencia->Barcelona[label =349,dir=none];
+Albacete->Murcia[label =150,dir=none];
+Albacete->Valencia[label =191,dir=none];
+Albacete->Madrid[label =251,dir=none];
+Barcelona->Valencia[label =349,dir=none];
+Barcelona->Gerona[label =100,dir=none];
+Barcelona->Zaragoza[label =296,dir=none];
+Gerona->Barcelona[label =100,dir=none];
 Zaragoza->Barcelona[label =296,dir=none];
 Zaragoza->Madrid[label =325,dir=none];
-Barcelona->Gerona[label =100,dir=none];
+Zaragoza->Bilbao[label =324,dir=none];
+Badajoz->Madrid[label =403,dir=none];
+Valladolid->Madrid[label =193,dir=none];
+Valladolid->Vigo[label =356,dir=none];
+Valladolid->Coruna[label =455,dir=none];
+Valladolid->Bilbao[label =280,dir=none];
+Valladolid->Coruña[label =455,dir=none];
+Vigo->Valladolid[label =356,dir=none];
+Vigo->Coruna[label =171,dir=none];
+Coruna->Valladolid[label =455,dir=none];
+Coruna->Vigo[label =171,dir=none];
+Bilbao->Valladolid[label =280,dir=none];
+Bilbao->Madrid[label =395,dir=none];
+Bilbao->Zaragoza[label =324,dir=none];
+Bilbao->Oviedo[label =304,dir=none];
+Oviedo->Bilbao[label =304,dir=none];
+Coruña->Vigo[label =171,dir=none];
+ Zaragoza->Disneyland[label =10000,dir=none];
 
 }

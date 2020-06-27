@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -51,12 +52,13 @@ public class Cargar_Rutas {
         Pantalla_Principal.Recorridos = new int[Lista_Vertice.poss][Lista_Vertice.poss];
         Pantalla_Principal.Recorridos = Pantalla_Principal.List_Vertice.llenar_matriz(Lista_Vertice.poss);
         
-        for(int fil=0; fil<Lista_Vertice.poss;fil++){
+        /*for(int fil=0; fil<Lista_Vertice.poss;fil++){
             for(int col=0; col<Lista_Vertice.poss;col++){
                 System.out.print(Pantalla_Principal.Recorridos[fil][col]+" || ");
             }
             System.out.println("");
-        }
+        }*/
+        JOptionPane.showMessageDialog(null, "Carga Masiva Realizada");
         
  }
  
