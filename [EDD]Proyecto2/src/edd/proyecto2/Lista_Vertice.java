@@ -115,6 +115,21 @@ public class Lista_Vertice {
         }
 
     }
+    
+    public void mostrar_Viaje(Vertice inicio){
+        
+        Vertice tmp = inicio;
+        
+        while(tmp != null){
+            
+            Viaje.L1.addItem(tmp.getCiudad());
+            Viaje.L2.addItem(tmp.getCiudad());
+            //System.out.print(tmp.getPosicion()+ tmp.getCiudad() + " -> ");
+            tmp = tmp.Siguiente;
+            
+        }
+
+    }
 
     public void insertar_arisa(Vertice Cab, Vertice ingresar){
         
@@ -140,7 +155,7 @@ public class Lista_Vertice {
 
     public void graficar(){
         contador = 1;
-         contenido = "digraph G {\n rankdir=LR \n node[shape=box];\ngraph [ dpi = 300 ];\n";
+         contenido = "digraph G {\n rankdir=LR \n node[shape=box];\n graph [ dpi = 300 ];\n";
          FileWriter documento = null;
          PrintWriter crear;
          String nombredot = "Lista_Adyasente.dot";
@@ -463,14 +478,12 @@ public class Lista_Vertice {
          Collections.reverse(ruta);
          
          
-        String name = "";
-        int time;
         
          for (int pos : ruta) 
         { 
            Vertice Ciudad_encontrada = BuscarXNodo(pos, Cabeza);
               
-            
+            Pantalla_Principal.List_Recorrido.Insertar(Ciudad_encontrada.getCiudad(), "no", tabla[pos][1]);
             System.out.println(pos + "->" + Ciudad_encontrada.getCiudad()+"->"+tabla[pos][1]);
         }
          

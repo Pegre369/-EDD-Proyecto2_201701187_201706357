@@ -193,6 +193,29 @@ public class Lista_Conductores {
         
         
     }
+    
+        public void mostrar_existente3(Conductor n){
+        
+        Conductor aux = n;
+        
+        if(aux==null){
+            return;
+        }
+        
+        do{
+            
+            
+            System.out.print(aux.getDpi()+" "+aux.getNombre()+"->");
+            Viaje.cbconductor.addItem(aux.getDpi().toString());
+            
+            
+            aux = aux.Siguiente;
+            
+        }while(aux!=Cabeza);
+        
+        
+        
+    }
 
     public void graficar(){
         

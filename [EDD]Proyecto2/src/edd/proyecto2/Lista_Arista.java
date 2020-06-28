@@ -1,12 +1,14 @@
 package edd.proyecto2;
 import Nodos.Rutas;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 /**
  *
  * @author Casca
  */
 public class Lista_Arista {
    
-
+    private String contenido;
     public Rutas Cabeza;
     
     public Lista_Arista() {
@@ -16,7 +18,7 @@ public class Lista_Arista {
     }
  
     
-     public void Insertar(String Ciudad1, String Ciudad2, int tiempo){
+    public void Insertar(String Ciudad1, String Ciudad2, int tiempo){
         
         Rutas nuevo = new Rutas(Ciudad1, Ciudad2, tiempo); 
         
@@ -47,7 +49,7 @@ public class Lista_Arista {
 
     }
     
-public Rutas Buscar(String City1, String City2, Rutas inicio){
+    public Rutas Buscar(String City1, String City2, Rutas inicio){
         
         Rutas aux = inicio;
         
@@ -69,7 +71,7 @@ public Rutas Buscar(String City1, String City2, Rutas inicio){
         
     }
 
-   public void mostrar(Rutas inicio){
+    public void mostrar(Rutas inicio){
         
         Rutas tmp = inicio;
         
@@ -82,6 +84,68 @@ public Rutas Buscar(String City1, String City2, Rutas inicio){
 
     }
 
+    public void graficar(int a){
+         contenido = "digraph G {\n rankdir=LR \n node[shape=box];\ngraph [ dpi = 300 ];\n";
+         FileWriter documento = null;
+         PrintWriter crear;
+         String nombredot = "Lista_Rutas"+a+".dot";
+         String direccion = "Lista_Rutas"+a+".png";
+              
+         contenido = contenido + cuerpo(Cabeza) +"\n";
+         contenido = contenido + "}";
+        
+         try {
+                documento = new FileWriter(nombredot);
+                crear = new PrintWriter(documento);
+                crear.print(contenido);
+                crear.close();
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
+         
+           try {
+                Runtime.getRuntime().exec("dot -Tpng " + nombredot + " -o " + direccion);
+                //abrirarchivo(direccion);
 
+            } catch (Exception e) {
+                System.err.println("");
+            }
+    }
+
+    public String cuerpo(Rutas n){
+        
+        String body;
+        Rutas aux = n;
+        
+        body = aux.getLugar_Origen()+"[ label = \""+ aux.getLugar_Origen()+"\n"+String.valueOf(aux.getTiempo())+ "\", fontsize=12]; \n";
+        
+        aux = aux.Siguiente; 
+        
+        while(aux!=null){
+            
+            body = body + aux.getLugar_Origen() +"[ label = \""+ aux.getLugar_Origen()+"\n"+String.valueOf(aux.getTiempo())+ "\", fontsize=12];\n";
+            
+            aux = aux.Siguiente;
+            
+        }
+        
+        
+        aux = n;
+        
+        while(aux!=null){
+            
+            if(aux.Siguiente!=null){
+            
+                body = body + aux.getLugar_Origen() +"->"+ aux.Siguiente.getLugar_Origen()+";\n";
+            
+            }
+            aux = aux.Siguiente;
+            
+        }
+        
+        return body;
+    }
+    
+    
 }
 

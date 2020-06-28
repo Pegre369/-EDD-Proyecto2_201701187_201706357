@@ -19,9 +19,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Vertice List_Vertice = new Lista_Vertice(); 
   public static Lista_Arista List_Recorrido = new Lista_Arista();
   public static Lista_Conductores List_Conductores = new Lista_Conductores();
+  public static Lista_Arista Recorrido = new Lista_Arista();
   public static int[][] Recorridos;
   public static ArbolB vehiculoRoot = new ArbolB(5);
-  
+  public static int sumado_nombre = 0;
   //public static String a = "prueba";
     public Pantalla_Principal() {
         initComponents();
@@ -67,6 +68,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu13 = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +105,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem5.setText("Mostrar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -254,6 +262,20 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu7.setText("Viajes");
+        jMenu7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+
+        jMenuItem2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem2.setText("Crear");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu7);
+
         jMenu5.setText("Reportes");
         jMenu5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu5);
@@ -379,10 +401,32 @@ public class Pantalla_Principal extends javax.swing.JFrame {
      }
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+      
+      
+      Viaje mostrar = new Viaje();
+      mostrar.show();
+      this.setExtendedState(ICONIFIED);
+       
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        try {
+
+            File objetofile = new File ("Lista_Rutas.png");
+            Desktop.getDesktop().open(objetofile);
+
+     }catch (IOException ex) {
+
+            System.out.println(ex);
+
+     }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
      
     public void graficarC(String cuerpo, String nombre){
          String contenido;
-         contenido = "digraph G {\n";
+         contenido = "digraph G { \n graph [ dpi = 300 ];\n";
          FileWriter documento = null;
          PrintWriter crear;
          String nombredot = nombre+".dot";
@@ -455,6 +499,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -465,6 +510,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
