@@ -23,6 +23,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Viajes List_viaje = new Lista_Viajes();
   public static int[][] Recorridos;
   public static ArbolB vehiculoRoot = new ArbolB(5);
+  public static HashTable tablaHash=new HashTable(37);
   public static int sumado_nombre = 0;
   //public static String a = "prueba";
     public Pantalla_Principal() {
@@ -49,6 +50,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -96,10 +98,20 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenuItem4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem4.setText("Manual");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem4);
 
         jMenuItem3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem3.setText("Carga Masiva");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem3);
 
         jMenu2.add(jMenu6);
@@ -112,6 +124,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem5);
+
+        jMenuItem12.setText("Editar-Eliminar");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem12);
 
         jMenuBar1.add(jMenu2);
 
@@ -412,7 +432,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        try {
+   /*     try {
 
             File objetofile = new File ("Lista_Rutas.png");
             Desktop.getDesktop().open(objetofile);
@@ -421,8 +441,31 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
             System.out.println(ex);
 
-     }
+     }*/
+    String asd=this.tablaHash.cuerpodot();
+        System.out.println("asd");
+     this.graficarC(asd, "Tabla_Hash");
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        Seleccionar_Archivo3 iniciar = new Seleccionar_Archivo3();
+        iniciar.show();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        InsertarCliente clienteI = new InsertarCliente();
+        clienteI.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        ClienteED clienteI = new ClienteED();
+        clienteI.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
      
     public void graficarC(String cuerpo, String nombre){
@@ -506,6 +549,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem16;
