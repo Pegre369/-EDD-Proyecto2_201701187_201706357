@@ -1,0 +1,12 @@
+digraph G {
+ rankdir=LR 
+ node[shape=box];
+graph [ dpi = 300 ];
+Dafed79c4e20d4fe0715cfc5511e3f837[label="afed79c4e20d4fe0715cfc5511e3f837
+Rolando
+Oviedo
+Gerona
+28/06/20"];
+Dafed79c4e20d4fe0715cfc5511e3f837->Dafed79c4e20d4fe0715cfc5511e3f837
+Dafed79c4e20d4fe0715cfc5511e3f837->Dafed79c4e20d4fe0715cfc5511e3f837
+}

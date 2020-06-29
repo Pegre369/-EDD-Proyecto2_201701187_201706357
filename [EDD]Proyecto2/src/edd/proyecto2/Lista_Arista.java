@@ -85,6 +85,7 @@ public class Lista_Arista {
     }
 
     public void graficar(int a){
+         contenido = "";
          contenido = "digraph G {\n rankdir=LR \n node[shape=box];\ngraph [ dpi = 300 ];\n";
          FileWriter documento = null;
          PrintWriter crear;
@@ -114,7 +115,7 @@ public class Lista_Arista {
 
     public String cuerpo(Rutas n){
         
-        String body;
+        String body = "";
         Rutas aux = n;
         
         body = aux.getLugar_Origen()+"[ label = \""+ aux.getLugar_Origen()+"\n"+String.valueOf(aux.getTiempo())+ "\", fontsize=12]; \n";

@@ -341,7 +341,7 @@ public class Lista_Vertice {
                            
               
             
-                    contenr = contenr + tempA.getLugar_Origen() +"->"+ tempA.getLugar_Destino()+"[label ="+ String.valueOf(tempA.getTiempo()) +",dir=none];\n";
+                    contenr = contenr + tempA.getLugar_Origen() +"->"+ tempA.getLugar_Destino()+"[label ="+ String.valueOf(tempA.getTiempo()) +"];\n";
                                
              
                 

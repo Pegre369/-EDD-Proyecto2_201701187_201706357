@@ -1,5 +1,6 @@
 package edd.proyecto2;
-import Nodos.Vehiculo;
+import Nodos.*;
+import static edd.proyecto2.Modificar_Conductores.jComboBox5;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.io.File;
@@ -83,6 +84,7 @@ public class Viaje extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         H1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,7 +137,7 @@ public class Viaje extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(450, 650, 230, 60);
+        jButton1.setBounds(540, 650, 170, 60);
 
         jButton2.setBackground(new java.awt.Color(0, 102, 153));
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -148,7 +150,7 @@ public class Viaje extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(470, 500, 230, 60);
+        jButton2.setBounds(490, 520, 230, 60);
 
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,7 +209,7 @@ public class Viaje extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(80, 650, 230, 60);
+        jButton3.setBounds(40, 650, 190, 60);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,6 +228,19 @@ public class Viaje extends javax.swing.JFrame {
         jLabel10.setText("Hora:");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(110, 560, 60, 30);
+
+        jButton4.setBackground(new java.awt.Color(0, 102, 153));
+        jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Mostrar Estructura");
+        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4);
+        jButton4.setBounds(290, 650, 190, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -292,15 +307,69 @@ public class Viaje extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        
         Date fech = new Date();
+        
         DateFormat fh = new SimpleDateFormat("ddMMyyHH:mm");
-        String Fecha = fh.format(fech);
+        
+        String Llave1 = fh.format(fech);
+        
         String Placa = (String) cbvehiculo.getSelectedItem();
         
+        String Llave = Placa + Llave1;
         
-        String llave = MD5(Placa + Fecha);
+        String LlaveMD5 = MD5(Llave);
         
-        System.out.println(Placa + " -> " + Fecha +" = "+llave);
+        String Origen = (String) L1.getSelectedItem();
+        
+        String Destino = (String) L2.getSelectedItem();
+        
+        String Fecha =  FH.getText();
+        
+        String Hora = H1.getText();
+        
+        //Condutor
+        
+        String dpi = (String) cbconductor.getSelectedItem();
+       
+        BigInteger DPI = new BigInteger(dpi);
+        
+        Conductor conductor = Pantalla_Principal.List_Conductores.buscarNodo(DPI);
+       
+        //Vehiculo
+        
+        String placaId= (String) cbvehiculo.getSelectedItem();
+        
+        Vehiculo carro = Pantalla_Principal.vehiculoRoot.searchPlaca(Pantalla_Principal.vehiculoRoot, placaId);
+        
+        
+        Pantalla_Principal.List_viaje.insertar(LlaveMD5, Llave, Origen, Destino, Fecha, Hora, conductor, carro, Pantalla_Principal.List_Recorrido);
+        try {
+            
+            Thread.sleep(100);
+            Pantalla_Principal.List_viaje.graficar();
+        
+        } catch (Exception e) {
+            
+            System.out.println(e);
+            
+        }
+        
+        
+        
+        System.out.println(Placa + " -> " + Llave +" = "+LlaveMD5);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {
+
+            File objetofile = new File ("Bloc_Viaje.png");
+            Desktop.getDesktop().open(objetofile);
+
+     }catch (IOException ex) {
+
+            System.out.println(ex);
+
+     }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     
     
@@ -373,6 +442,7 @@ public class Viaje extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
