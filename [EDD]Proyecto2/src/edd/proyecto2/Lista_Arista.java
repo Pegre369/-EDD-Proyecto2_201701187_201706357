@@ -77,7 +77,7 @@ public class Lista_Arista {
         
         while(tmp != null){
             
-            System.out.print("("+tmp.getLugar_Origen()+ ", "+tmp.getLugar_Destino()+") ->" );
+            System.out.print("("+tmp.getLugar_Origen()+ ", "+String.valueOf(tmp.getTiempo())+") ->" );
             tmp = tmp.Siguiente;
             
         }

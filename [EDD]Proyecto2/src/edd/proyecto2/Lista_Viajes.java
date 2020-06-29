@@ -64,7 +64,7 @@ public class Lista_Viajes {
             
             while(aux!=Cola){
                 
-                if(aux.getLlave().equals(Llave)){
+                if(aux.getLlaveMD5().equals(Llave)){
                     
                     return aux;
                     
@@ -74,7 +74,7 @@ public class Lista_Viajes {
             }
           
             aux = Cola;
-            if(aux.getLlave().equals(Llave)){
+            if(aux.getLlaveMD5().equals(Llave)){
                     
                     return aux;
                     
@@ -150,4 +150,26 @@ public class Lista_Viajes {
         return body;
     }
     
+     public void mostrar_existente(Nodo_Viaje n){
+        
+        Nodo_Viaje aux = n;
+        
+        if(aux==null){
+            return;
+        }
+        
+        do{
+            
+            
+            //System.out.print(aux.getDpi()+" "+aux.getNombre()+"->");
+            Ruta_de_un_Viaje.L1.addItem(aux.getLlaveMD5());
+            
+            
+            aux = aux.Siguiente;
+            
+        }while(aux!=Cabeza);
+        
+     
+        
+    }
 }

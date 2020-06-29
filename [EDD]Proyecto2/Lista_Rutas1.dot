@@ -4,11 +4,14 @@ digraph G {
 graph [ dpi = 300 ];
 Bilbao[ label = "Bilbao
 0", fontsize=12]; 
-Valladolid[ label = "Valladolid
-280", fontsize=12];
-Coruña[ label = "Coruña
-735", fontsize=12];
-Bilbao->Valladolid;
-Valladolid->Coruña;
+Madrid[ label = "Madrid
+395", fontsize=12];
+Albacete[ label = "Albacete
+646", fontsize=12];
+Valencia[ label = "Valencia
+837", fontsize=12];
+Bilbao->Madrid;
+Madrid->Albacete;
+Albacete->Valencia;
 
 }

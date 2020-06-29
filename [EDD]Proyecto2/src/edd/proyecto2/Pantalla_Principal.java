@@ -74,6 +74,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -299,6 +300,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenu5.setText("Reportes");
         jMenu5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+
+        jMenuItem15.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem15.setText("Ruta de un viaje");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem15);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -467,6 +478,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+       
+        Ruta_de_un_Viaje Repo6 = new Ruta_de_un_Viaje();
+        Repo6.show();
+        this.setExtendedState(ICONIFIED);
+        
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
      
     public void graficarC(String cuerpo, String nombre){
          String contenido;
@@ -552,6 +571,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;

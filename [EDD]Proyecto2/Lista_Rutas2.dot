@@ -2,13 +2,19 @@ digraph G {
  rankdir=LR 
  node[shape=box];
 graph [ dpi = 300 ];
-Zaragoza[ label = "Zaragoza
+Oviedo[ label = "Oviedo
 0", fontsize=12]; 
-Madrid[ label = "Madrid
-325", fontsize=12];
-Badajoz[ label = "Badajoz
-728", fontsize=12];
-Zaragoza->Madrid;
-Madrid->Badajoz;
+Bilbao[ label = "Bilbao
+304", fontsize=12];
+Zaragoza[ label = "Zaragoza
+628", fontsize=12];
+Barcelona[ label = "Barcelona
+924", fontsize=12];
+Gerona[ label = "Gerona
+1024", fontsize=12];
+Oviedo->Bilbao;
+Bilbao->Zaragoza;
+Zaragoza->Barcelona;
+Barcelona->Gerona;
 
 }

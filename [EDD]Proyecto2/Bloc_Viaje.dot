@@ -2,28 +2,20 @@ digraph G {
  rankdir=LR 
  node[shape=box];
 graph [ dpi = 300 ];
-Dae4a812917d77d9788e031f97b209db0[label="ae4a812917d77d9788e031f97b209db0
-Cliente: 28AAA
-Conductor: Segio
-Zaragoza
-Badajoz
-28/06/20"];
-Da9d2aa3a2656c90623b0a165917d3fb4[label="a9d2aa3a2656c90623b0a165917d3fb4
-Cliente: 33AAA
-Conductor: Rolando
+De9e00c7cce4772f2d18517f417baaf73[label="e9e00c7cce4772f2d18517f417baaf73
+Cliente: 9AAA
+Conductor: Luis
 Bilbao
-Coruña
-28/06/20"];
-D0a1d19f8495cbbec86da839cd6e5431c[label="0a1d19f8495cbbec86da839cd6e5431c
-Cliente: AAA0
-Conductor: Fernanda
+Valencia
+29/06/20"];
+Df1badf0f53050cdcad843723c9554947[label="f1badf0f53050cdcad843723c9554947
+Cliente: 27AAA
+Conductor: Pedro
 Oviedo
 Gerona
-28/06/20"];
-Dae4a812917d77d9788e031f97b209db0->Da9d2aa3a2656c90623b0a165917d3fb4
-Dae4a812917d77d9788e031f97b209db0->D0a1d19f8495cbbec86da839cd6e5431c
-Da9d2aa3a2656c90623b0a165917d3fb4->D0a1d19f8495cbbec86da839cd6e5431c
-Da9d2aa3a2656c90623b0a165917d3fb4->Dae4a812917d77d9788e031f97b209db0
-D0a1d19f8495cbbec86da839cd6e5431c->Dae4a812917d77d9788e031f97b209db0
-D0a1d19f8495cbbec86da839cd6e5431c->Da9d2aa3a2656c90623b0a165917d3fb4
+29/06/20"];
+De9e00c7cce4772f2d18517f417baaf73->Df1badf0f53050cdcad843723c9554947
+De9e00c7cce4772f2d18517f417baaf73->Df1badf0f53050cdcad843723c9554947
+Df1badf0f53050cdcad843723c9554947->De9e00c7cce4772f2d18517f417baaf73
+Df1badf0f53050cdcad843723c9554947->De9e00c7cce4772f2d18517f417baaf73
 }
