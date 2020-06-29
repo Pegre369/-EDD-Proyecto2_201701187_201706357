@@ -30,6 +30,7 @@ public class Viaje extends javax.swing.JFrame {
         Pantalla_Principal.List_Conductores.mostrar_existente3(Pantalla_Principal.List_Conductores.Cabeza);
         Pantalla_Principal.List_Vertice.mostrar_Viaje(Pantalla_Principal.List_Vertice.Cabeza);
         rellenar(Pantalla_Principal.vehiculoRoot);
+        rellenar2();
         fechas();
         ImageIcon imagen = new ImageIcon("Viaje_Logo.png");
         Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_DEFAULT));
@@ -48,6 +49,19 @@ public class Viaje extends javax.swing.JFrame {
                     rellenar(child);
                 }
                 
+            }
+        }
+    }
+    
+    public void rellenar2(){
+        HashTable temp = Pantalla_Principal.tablaHash;
+        for (int i = 0; i <temp.indices.length ; i++) {
+            if(temp.indices[i]!=null){
+                NodoLDC tempN = temp.indices[i].primero; 
+                while(tempN!=null){
+                    cbcliente.addItem(tempN.cliente.getDpi().toString());
+                    tempN=tempN.siguiente;
+                }
             }
         }
     }
@@ -265,7 +279,9 @@ public class Viaje extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            
+        
+        Pantalla_Principal.List_Recorrido = new Lista_Arista();
+        
         String origen = (String) L1.getSelectedItem();
         String fin = (String) L2.getSelectedItem();
         
@@ -326,6 +342,14 @@ public class Viaje extends javax.swing.JFrame {
         
         String Hora = H1.getText();
         
+        //Cliente
+        
+         String dpiC = (String) cbcliente.getSelectedItem();
+        
+         BigInteger Clientedpi = new BigInteger(dpiC);
+        
+         NodoLDC cliente = Pantalla_Principal.tablaHash.buscarCliente(Clientedpi);
+        
         //Condutor
         
         String dpi = (String) cbconductor.getSelectedItem();
@@ -341,11 +365,12 @@ public class Viaje extends javax.swing.JFrame {
         Vehiculo carro = Pantalla_Principal.vehiculoRoot.searchPlaca(Pantalla_Principal.vehiculoRoot, placaId);
         
         
-        Pantalla_Principal.List_viaje.insertar(LlaveMD5, Llave, Origen, Destino, Fecha, Hora, conductor, carro, Pantalla_Principal.List_Recorrido);
+        Pantalla_Principal.List_viaje.insertar(LlaveMD5, Llave, Origen, Destino, Fecha, Hora, conductor, carro, Pantalla_Principal.List_Recorrido,cliente);
         try {
             
             Thread.sleep(100);
             Pantalla_Principal.List_viaje.graficar();
+            JOptionPane.showMessageDialog(null, "Viaje Registrado");
         
         } catch (Exception e) {
             

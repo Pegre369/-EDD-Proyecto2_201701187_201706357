@@ -25,9 +25,9 @@ public class Lista_Viajes {
     }
     
     
-     public void insertar(String LlaveMD5, String Llave, String Origen, String Destino, String Fecha, String Hora, Conductor conductor, Vehiculo carro, Lista_Arista recorido){
+     public void insertar(String LlaveMD5, String Llave, String Origen, String Destino, String Fecha, String Hora, Conductor conductor, Vehiculo carro, Lista_Arista recorido,NodoLDC Cliente){
         
-        Nodo_Viaje nuevo = new Nodo_Viaje(LlaveMD5, Llave, Origen, Destino, Fecha, Hora, conductor, carro, recorido);
+        Nodo_Viaje nuevo = new Nodo_Viaje(LlaveMD5, Llave, Origen, Destino, Fecha, Hora, conductor, carro, recorido,Cliente);
         Nodo_Viaje existe = buscarNodo(Llave);
         
         if(existe != null){
@@ -127,7 +127,7 @@ public class Lista_Viajes {
         
         do{
             
-            body = body + "D"+aux.getLlaveMD5()+ "[label=\""+aux.getLlaveMD5()+"\n"+ aux.getConductor().getNombre()+"\n"+ aux.getOrigen()+"\n"+aux.getDestino()+"\n"+aux.getFecha()+"\"];\n";  
+            body = body + "D"+aux.getLlaveMD5()+ "[label=\""+aux.getLlaveMD5()+"\n"+"Cliente: "+aux.getCliente().cliente.getNombre()+"\n"+"Conductor: "+ aux.getConductor().getNombre()+"\n"+ aux.getOrigen()+"\n"+aux.getDestino()+"\n"+aux.getFecha()+"\"];\n";  
             
             aux = aux.Siguiente;
             

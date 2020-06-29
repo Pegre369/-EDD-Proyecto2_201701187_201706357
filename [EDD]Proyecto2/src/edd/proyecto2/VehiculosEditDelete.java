@@ -85,8 +85,6 @@ public class VehiculosEditDelete extends javax.swing.JFrame {
             }
         });
 
-        cbxPlacas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jButton3.setText("ver");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -19,7 +19,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Vertice List_Vertice = new Lista_Vertice(); 
   public static Lista_Arista List_Recorrido = new Lista_Arista();
   public static Lista_Conductores List_Conductores = new Lista_Conductores();
-  public static Lista_Arista Recorrido = new Lista_Arista();
+  public static Lista_Arista Recorrido;
   public static Lista_Viajes List_viaje = new Lista_Viajes();
   public static int[][] Recorridos;
   public static ArbolB vehiculoRoot = new ArbolB(5);

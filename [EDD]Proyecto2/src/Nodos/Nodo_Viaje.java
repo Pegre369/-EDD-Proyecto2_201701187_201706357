@@ -19,8 +19,9 @@ public class Nodo_Viaje {
     private Conductor conductor;
     private Vehiculo carro;
     private Lista_Arista recorido;
+    private NodoLDC Cliente;
 
-    public Nodo_Viaje(String LlaveMD5, String Llave, String Origen, String Destino, String Fecha, String Hora, Conductor conductor, Vehiculo carro, Lista_Arista recorido) {
+    public Nodo_Viaje(String LlaveMD5, String Llave, String Origen, String Destino, String Fecha, String Hora, Conductor conductor, Vehiculo carro, Lista_Arista recorido,NodoLDC Cliente) {
         this.LlaveMD5 = LlaveMD5;
         this.Llave = Llave;
         this.Origen = Origen;
@@ -30,6 +31,7 @@ public class Nodo_Viaje {
         this.conductor = conductor;
         this.carro = carro;
         this.recorido = recorido;
+        this.Cliente = Cliente;
     }
 
     public String getLlaveMD5() {
@@ -66,6 +68,10 @@ public class Nodo_Viaje {
 
     public Lista_Arista getRecorido() {
         return recorido;
+    }
+
+    public NodoLDC getCliente() {
+        return Cliente;
     }
     
     
