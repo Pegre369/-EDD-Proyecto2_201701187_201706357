@@ -16,6 +16,7 @@ public class Conductor {
     private String FechaNac;
     private int Telefono;
     private String Direccion;
+    private int Contador;
 
     public Conductor(BigInteger Dpi, String Nombre, String Apellido, String Licencia, String Genero, String FechaNac, int Telefono, String Direccion) {
         this.Siguiente = null;
@@ -28,6 +29,7 @@ public class Conductor {
         this.FechaNac = FechaNac;
         this.Telefono = Telefono;
         this.Direccion = Direccion;
+        this.Contador = 0;
     }
 
     public BigInteger getDpi() {
@@ -62,6 +64,11 @@ public class Conductor {
         return Direccion;
     }
 
+    public int getContador() {
+        return Contador;
+    }
+
+    
     public void setDpi(BigInteger Dpi) {
         this.Dpi = Dpi;
     }
@@ -94,7 +101,8 @@ public class Conductor {
         this.Direccion = Direccion;
     }
 
-    
-    
-    
+    public void setContador(int Contador) {
+        this.Contador = Contador;
+    }
+
 }

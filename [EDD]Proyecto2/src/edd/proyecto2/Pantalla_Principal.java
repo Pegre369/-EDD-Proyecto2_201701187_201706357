@@ -21,6 +21,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Conductores List_Conductores = new Lista_Conductores();
   public static Lista_Arista Recorrido;
   public static Lista_Viajes List_viaje = new Lista_Viajes();
+  public static Lista_Top_Cliente Top_Clientes = new Lista_Top_Cliente();
+  public static Lista_Top_Cliente Top_Condutores = new Lista_Top_Cliente();
+  public static Lista_Top_Carros Top_vehiculo = new Lista_Top_Carros();
   public static int[][] Recorridos;
   public static ArbolB vehiculoRoot = new ArbolB(5);
   public static HashTable tablaHash=new HashTable(37);
@@ -74,6 +77,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem19 = new javax.swing.JMenuItem();
+        jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -301,6 +306,24 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu5.setText("Reportes");
         jMenu5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
+        jMenuItem19.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem19.setText("Top 10 Clientes");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem19);
+
+        jMenuItem20.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem20.setText("Top 10 Conductores");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem20);
+
         jMenuItem15.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem15.setText("Ruta de un viaje");
         jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
@@ -486,6 +509,18 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+       Top_Clientes Repo2 = new Top_Clientes();
+        Repo2.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        Top_Conductores Repo3 = new Top_Conductores();
+        Repo3.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
+
      
     public void graficarC(String cuerpo, String nombre){
          String contenido;
@@ -575,7 +610,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

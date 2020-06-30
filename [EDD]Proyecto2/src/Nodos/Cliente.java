@@ -13,6 +13,7 @@ public class Cliente {
     private String FechaNac;
     private int Telefono;
     private String Direccion;
+    private int Contador;
 
     public Cliente(BigInteger Dpi, String Nombre, String Apellido, String Genero, String FechaNac, int Telefono, String Direccion) {
         this.Dpi = Dpi;
@@ -22,6 +23,7 @@ public class Cliente {
         this.FechaNac = FechaNac;
         this.Telefono = Telefono;
         this.Direccion = Direccion;
+        this.Contador = 0;
     }
 
     public BigInteger getDpi() {
@@ -52,6 +54,11 @@ public class Cliente {
         return Direccion;
     }
 
+    public int getContador() {
+        return Contador;
+    }
+    
+
     public void setDpi(BigInteger Dpi) {
         this.Dpi = Dpi;
     }
@@ -78,6 +85,10 @@ public class Cliente {
 
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
+    }
+
+    public void setContador(int Contador) {
+        this.Contador = Contador;
     }
        
     

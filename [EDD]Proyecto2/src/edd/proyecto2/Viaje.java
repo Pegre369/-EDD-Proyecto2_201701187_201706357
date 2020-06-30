@@ -22,9 +22,8 @@ import javax.swing.JOptionPane;
  */
 public class Viaje extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Viaje
-     */
+
+    
     public Viaje() {
         initComponents();
         Pantalla_Principal.List_Conductores.mostrar_existente3(Pantalla_Principal.List_Conductores.Cabeza);
@@ -322,9 +321,13 @@ public class Viaje extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        
+        
+        
         Date fech = new Date();
         
-        DateFormat fh = new SimpleDateFormat("ddMMyyHH:mm");
+        DateFormat fh = new SimpleDateFormat("ddMMyyHH:mm:ss");
+        
+        //System.out.println(fh.format(fech));
         
         String Llave1 = fh.format(fech);
         
@@ -348,21 +351,50 @@ public class Viaje extends javax.swing.JFrame {
         
          BigInteger Clientedpi = new BigInteger(dpiC);
         
+         // Reprote Top 
+         
          NodoLDC cliente = Pantalla_Principal.tablaHash.buscarCliente(Clientedpi);
+         
+         int sum = cliente.cliente.getContador() + 1;
+         
+         cliente.cliente.setContador(sum);
         
+         Pantalla_Principal.Top_Clientes.insertar(cliente.cliente.getDpi(), cliente.cliente.getNombre(), sum);
+         
+         //Pantalla_Principal.Top_Clientes.mostrar(Pantalla_Principal.Top_Clientes.Cabeza);
+         
         //Condutor
         
         String dpi = (String) cbconductor.getSelectedItem();
        
         BigInteger DPI = new BigInteger(dpi);
         
+        //Reprote Top
+        
         Conductor conductor = Pantalla_Principal.List_Conductores.buscarNodo(DPI);
+        
+        int sum2 = conductor.getContador() + 1;
+         
+        conductor.setContador(sum2);
+        
+        Pantalla_Principal.Top_Condutores.insertar(conductor.getDpi(), conductor.getNombre(), sum2);
+         
+        //Pantalla_Principal.Top_Condutores.mostrar(Pantalla_Principal.Top_Condutores.Cabeza);
        
         //Vehiculo
         
         String placaId= (String) cbvehiculo.getSelectedItem();
         
+        //Reporte Top
+        
         Vehiculo carro = Pantalla_Principal.vehiculoRoot.searchPlaca(Pantalla_Principal.vehiculoRoot, placaId);
+        
+        int sum3 = carro.getContador() + 1;
+         
+        carro.setContador(sum3);
+        
+        Pantalla_Principal.Top_vehiculo.insertar(carro.getPlaca(), carro.getMarca(), carro.getMarca(), sum3);
+        Pantalla_Principal.Top_vehiculo.mostrar(Pantalla_Principal.Top_vehiculo.Cabeza);
         
         
         Pantalla_Principal.List_viaje.insertar(LlaveMD5, Llave, Origen, Destino, Fecha, Hora, conductor, carro, Pantalla_Principal.List_Recorrido,cliente);

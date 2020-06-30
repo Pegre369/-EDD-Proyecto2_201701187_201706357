@@ -35,10 +35,10 @@ public class Lista_Conductores {
             Cabeza = nuevo;
         } else {
             Conductor aux = Cabeza;
-            while ((aux.Siguiente != Cabeza) && (aux.getDpi().compareTo(nuevo.getDpi())==-1 )) {
+            while ((aux.Siguiente != Cabeza) && (aux.getDpi().compareTo(nuevo.getDpi())== -1 )) {
                 aux = aux.Siguiente;
             }
-            if ((aux.Siguiente == Cabeza) && aux.getDpi().compareTo(nuevo.getDpi())==-1 ) {
+            if ((aux.Siguiente == Cabeza) && aux.getDpi().compareTo(nuevo.getDpi())== -1 ) {
                 nuevo.Siguiente= Cabeza;
                 nuevo.Anterior = aux;
                 aux.Siguiente = nuevo;
@@ -99,7 +99,8 @@ public class Lista_Conductores {
             }
           
             aux = Cola;
-            if(aux.getDpi() == Dpi){
+            
+            if(aux.getDpi().equals(Dpi)){
                     
                     return aux;
                     

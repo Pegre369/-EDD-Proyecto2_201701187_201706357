@@ -14,7 +14,8 @@ public class Vehiculo {
     private String Color;
     private String Precio;
     private String Transmision;
-
+    private int Contador;
+    
     public Vehiculo(String Placa, String Marca, String Modelo, int anio, String Color, String Precio, String Transmision) {
         this.Placa = Placa;
         this.Marca = Marca;
@@ -23,6 +24,7 @@ public class Vehiculo {
         this.Color = Color;
         this.Precio = Precio;
         this.Transmision = Transmision;
+        this.Contador = 0;
     }
 
     public String getPlaca() {
@@ -53,6 +55,10 @@ public class Vehiculo {
         return Transmision;
     }
 
+    public int getContador() {
+        return Contador;
+    }
+
     public void setPlaca(String Placa) {
         this.Placa = Placa;
     }
@@ -79,6 +85,10 @@ public class Vehiculo {
 
     public void setTransmision(String Transmision) {
         this.Transmision = Transmision;
+    }
+
+    public void setContador(int Contador) {
+        this.Contador = Contador;
     }
     
     
