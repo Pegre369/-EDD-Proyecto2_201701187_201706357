@@ -36,7 +36,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jLabel1.setIcon(logo);
         this.repaint();
         String b="Chocolate";
-            System.out.println(b);
+        System.out.println(b);
+            
     }
 
    
