@@ -22,7 +22,7 @@ public class prubea {
         winzip=new Winzip();
     }
     
-    public void comprimir(String acomprimir){
+    public void comprimir(String acomprimir,String nameA){
         String texto=acomprimir;
         try {
             //Verificamos que la cadena no sea nula, si lo es se lanza una excepcion
@@ -31,7 +31,7 @@ public class prubea {
 						throw new NombreNulo();
 					}
 					//Utilizamos la funcion comprimir del objeto winzip y le pasamos la cadena a comprimir
-					String[] cadenas=winzip.Comprimir(texto);
+					String[] cadenas=winzip.Comprimir(texto,nameA);
 					//Mostramos la cadena de direcciones y la cadena de bytes
 					       System.out.println("Direcciones: "+cadenas[0]+"\nCaracteres: "+cadenas[1]);
         } catch (Exception e) {
@@ -40,10 +40,10 @@ public class prubea {
 					
     }
     
-    public String descomprimir(){
+    public String descomprimir(String nameA){
 				//Utilizamos la funcion descomprimir de la clase Winzip
         try {
-            return "El mensaje original es: "+winzip.Descomprimir();
+            return "El mensaje original es: "+winzip.Descomprimir(nameA);
         } catch (Exception e) {
             System.out.println("Algo salio mal");
         }

@@ -20,7 +20,7 @@ import lista_char.Lista;
 
 public class Winzip {
 
-	public String[] Comprimir(String mensaje) throws FueraDeRango, ListaVacia, IOException, NombreNulo{
+	public String[] Comprimir(String mensaje,String nameA) throws FueraDeRango, ListaVacia, IOException, NombreNulo{
 		//creamos una lista para almacenar el mensaje
 		Lista cadena=new Lista();
 		cadena.toLista(mensaje);//La funcion toLista se encuentra dentro de la clase lista
@@ -38,7 +38,7 @@ public class Winzip {
 		String direcciones=tabla.unirTodo(mensaje);
 		//Preguntamos al usuario el nombre que debe llevar el archivo
 		//String archivo=JOptionPane.showInputDialog(null,"Escribe el nombre del archivo a generar.(sin extension)","Crear Archivo",JOptionPane.QUESTION_MESSAGE);
-		String archivo="ppp";
+		String archivo=nameA;
                 if(archivo.length()==0){
 			JOptionPane.showMessageDialog(null, "Error, debes escribir un nombre","Error",JOptionPane.ERROR_MESSAGE);
 			throw new NombreNulo();
@@ -50,10 +50,10 @@ public class Winzip {
 		return array;
 	}
 	
-	public String Descomprimir() throws IOException, NombreNulo{
+	public String Descomprimir(String nameA) throws IOException, NombreNulo{
 		//prguntamos al usuario el nombre del archivo a leer
 		//String archivo=JOptionPane.showInputDialog(null,"Escribe el nombre del archivo a descomprimir.(sin extension)","Abrir Archivo",JOptionPane.QUESTION_MESSAGE);
-		String archivo="ppp";
+		String archivo=nameA;
                 if(archivo.length()==0){
 			JOptionPane.showMessageDialog(null, "Error, debes escribir un nombre","Error",JOptionPane.ERROR_MESSAGE);
 			throw new NombreNulo();

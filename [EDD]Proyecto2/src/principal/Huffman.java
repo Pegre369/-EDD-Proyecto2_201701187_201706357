@@ -13,8 +13,8 @@ public class Huffman {
     
     public void startH(){
         prubea p = new prubea();
-        p.comprimir("opojasd");
+        p.comprimir("opojasd","sijala");
         
-        System.out.println(p.descomprimir());
+        System.out.println(p.descomprimir("sijala"));
     }
 }
