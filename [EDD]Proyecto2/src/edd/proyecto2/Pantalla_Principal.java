@@ -79,6 +79,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -324,6 +325,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem20);
 
+        jMenuItem21.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem21.setText("Top 10 Vehiculo");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem21);
+
         jMenuItem15.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem15.setText("Ruta de un viaje");
         jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
@@ -521,6 +531,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jMenuItem20ActionPerformed
 
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        Top_Vehiculos Repo4 = new Top_Vehiculos();
+        Repo4.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
      
     public void graficarC(String cuerpo, String nombre){
          String contenido;
@@ -613,6 +629,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
