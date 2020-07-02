@@ -6,6 +6,7 @@
 package edd.proyecto2;
 
 import Nodos.*;
+import principal.prubea;
 
 /**
  *
@@ -34,7 +35,7 @@ private String Para_reporte="";
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescomprimir = new javax.swing.JTextArea();
         jButton6 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtcomprimir = new javax.swing.JTextArea();
@@ -77,11 +78,11 @@ private String Para_reporte="";
         jPanel4.add(jButton5);
         jButton5.setBounds(30, 400, 190, 60);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setEnabled(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescomprimir.setColumns(20);
+        txtDescomprimir.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtDescomprimir.setRows(5);
+        txtDescomprimir.setEnabled(false);
+        jScrollPane1.setViewportView(txtDescomprimir);
 
         jPanel4.add(jScrollPane1);
         jScrollPane1.setBounds(270, 450, 460, 180);
@@ -131,7 +132,19 @@ private String Para_reporte="";
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
+             String descomprimido="";
+      String mostrar="";
+      prubea p = new prubea();
+      descomprimido= p.descomprimir("Top_10_Vehiculos");
+      String [] contenido0 = descomprimido.split(";");
+        for (String a : contenido0) {
+            String [] contenido1=a.split("/");
+            for (String b : contenido1) {
+                mostrar+=(b+" ");
+            }
+            mostrar+=("\n");
+        }
+      txtDescomprimir.setText(mostrar);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -144,6 +157,9 @@ private String Para_reporte="";
         txtcomprimir.setText(reporte);
 
         System.out.println(Para_reporte);
+        
+        prubea p = new prubea();
+        p.comprimir(Para_reporte, Nombre);
     }//GEN-LAST:event_jButton6ActionPerformed
 public String contenido(){
         
@@ -220,7 +236,7 @@ public String contenido(){
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtDescomprimir;
     private javax.swing.JTextArea txtcomprimir;
     // End of variables declaration//GEN-END:variables
 }
