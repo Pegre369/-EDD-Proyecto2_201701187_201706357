@@ -6,9 +6,15 @@ Oviedo[ label = "Oviedo
 0", fontsize=12]; 
 Bilbao[ label = "Bilbao
 304", fontsize=12];
-Valladolid[ label = "Valladolid
-584", fontsize=12];
+Zaragoza[ label = "Zaragoza
+628", fontsize=12];
+Barcelona[ label = "Barcelona
+924", fontsize=12];
+Gerona[ label = "Gerona
+1024", fontsize=12];
 Oviedo->Bilbao;
-Bilbao->Valladolid;
+Bilbao->Zaragoza;
+Zaragoza->Barcelona;
+Barcelona->Gerona;
 
 }

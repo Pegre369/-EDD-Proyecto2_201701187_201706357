@@ -44,7 +44,7 @@ public class Winzip {
 			throw new NombreNulo();
 		}
 		//Escibimos en el nuevo archivo la cadena de caracteres
-		String codificado=escribir(direcciones,tabla,archivo+".txt");
+		String codificado=escribir(direcciones,tabla,archivo+".edd");
 		//Creamos un array de string para retornar las direcciones y los caracteres al usuario
 		String[] array={direcciones,codificado};
 		return array;
@@ -58,7 +58,7 @@ public class Winzip {
 			JOptionPane.showMessageDialog(null, "Error, debes escribir un nombre","Error",JOptionPane.ERROR_MESSAGE);
 			throw new NombreNulo();
 		}
-		File doc=new File(archivo+".txt");
+		File doc=new File(archivo+".edd");
 	    FileReader fr= new FileReader(doc);
 	    BufferedReader lector=new BufferedReader(fr);
 	    //Cargamos en apoyo2 el mensaje de caracteres
