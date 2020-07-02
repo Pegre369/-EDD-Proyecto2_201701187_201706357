@@ -25,7 +25,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
   public static Lista_Top_Cliente Top_Clientes = new Lista_Top_Cliente();
   public static Lista_Top_Cliente Top_Condutores = new Lista_Top_Cliente();
   public static Lista_Top_Carros Top_vehiculo = new Lista_Top_Carros();
-  public static int[][] Recorridos;
+  public static Lista_Top_Viaje Top_Viajes = new Lista_Top_Viaje();
   public static ArbolB vehiculoRoot = new ArbolB(5);
   public static HashTable tablaHash=new HashTable(37);
   public static int sumado_nombre = 0;
@@ -82,6 +82,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem22 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
@@ -311,6 +312,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         jMenu5.setText("Reportes");
         jMenu5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+
+        jMenuItem22.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem22.setText("Top 10 Viajes");
+        jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem22ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem22);
 
         jMenuItem19.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jMenuItem19.setText("Top 10 Clientes");
@@ -542,6 +552,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jMenuItem21ActionPerformed
 
+    private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
+         Top_Viajes Repo2 = new Top_Viajes();
+        Repo2.show();
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jMenuItem22ActionPerformed
+
      
     public void graficarC(String cuerpo, String nombre){
          String contenido;
@@ -573,6 +589,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+      public static int[][] Recorridos;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -635,6 +652,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

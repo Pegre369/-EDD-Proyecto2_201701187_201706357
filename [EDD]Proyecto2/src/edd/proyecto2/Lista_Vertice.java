@@ -19,6 +19,7 @@ public class Lista_Vertice {
     private String contenido;
     private int contador;
     public static int poss=0;
+    public static int Largo_Viaje;
     
     public Lista_Vertice() {
     
@@ -485,7 +486,10 @@ public class Lista_Vertice {
               
             Pantalla_Principal.List_Recorrido.Insertar(Ciudad_encontrada.getCiudad(), "no", tabla[pos][1]);
             System.out.println(pos + "->" + Ciudad_encontrada.getCiudad()+"->"+tabla[pos][1]);
+            
+            Largo_Viaje = tabla[pos][1];
         }
+         
          
         
     }  

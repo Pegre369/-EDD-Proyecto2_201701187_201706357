@@ -269,7 +269,7 @@ public class Eliminar_Conductor extends javax.swing.JFrame {
             }
 
         
-
+            Pantalla_Principal.List_Conductores.graficar();
         //System.out.println(licencia);
 
     }//GEN-LAST:event_jButton2ActionPerformed

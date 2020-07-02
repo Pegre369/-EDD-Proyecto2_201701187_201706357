@@ -419,7 +419,7 @@ public class Modificar_Conductores extends javax.swing.JFrame {
         
         
         //System.out.println(licencia);
-
+        Pantalla_Principal.List_Conductores.graficar();
        
 
     }//GEN-LAST:event_jButton2ActionPerformed

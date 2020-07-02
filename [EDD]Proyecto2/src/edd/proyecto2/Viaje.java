@@ -31,6 +31,7 @@ public class Viaje extends javax.swing.JFrame {
         rellenar(Pantalla_Principal.vehiculoRoot);
         rellenar2();
         fechas();
+        jButton3.enable(false);
         ImageIcon imagen = new ImageIcon("Viaje_Logo.png");
         Icon logo = new ImageIcon(imagen.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_DEFAULT));
         jLabel1.setIcon(logo);
@@ -314,9 +315,9 @@ public class Viaje extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "No puede hacer rutas donde: \n el destino es igual al origen");
             
         }
-        
-        
-
+        System.out.println(Lista_Vertice.Largo_Viaje);
+        jButton3.enable(true);
+        jButton2.enable(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -410,9 +411,13 @@ public class Viaje extends javax.swing.JFrame {
             
         }
         
+        Pantalla_Principal.Top_Viajes.insertar(LlaveMD5, Origen, Destino, Lista_Vertice.Largo_Viaje);
+        Pantalla_Principal.Top_Viajes.mostrar(Pantalla_Principal.Top_Viajes.Cabeza);
         
         
-        System.out.println(Placa + " -> " + Llave +" = "+LlaveMD5);
+       // System.out.println(Placa + " -> " + Llave +" = "+LlaveMD5);
+       jButton2.enable(true);
+       jButton3.enable(false); 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -426,6 +431,9 @@ public class Viaje extends javax.swing.JFrame {
             System.out.println(ex);
 
      }
+        
+       
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     
