@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import principal.prubea;
 
 /**
  *
@@ -36,7 +37,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jLabel1.setIcon(logo);
         this.repaint();
         String b="Chocolate";
-            System.out.println(b);
+        System.out.println(b);
+        prubea p = new prubea();
+        p.comprimir("opojasd","sijala");
+        
+        System.out.println(p.descomprimir("sijala"));
     }
 
    

@@ -1,5 +1,6 @@
 package edd.proyecto2;
 import Nodos.*;
+import principal.prubea;
 /**
  *
  * @author Casca
@@ -27,7 +28,7 @@ public class Top_Clientes extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescomprimir = new javax.swing.JTextArea();
         jButton6 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtcomprimir = new javax.swing.JTextArea();
@@ -70,11 +71,11 @@ public class Top_Clientes extends javax.swing.JFrame {
         jPanel4.add(jButton5);
         jButton5.setBounds(30, 400, 190, 60);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setEnabled(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescomprimir.setColumns(20);
+        txtDescomprimir.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtDescomprimir.setRows(5);
+        txtDescomprimir.setEnabled(false);
+        jScrollPane1.setViewportView(txtDescomprimir);
 
         jPanel4.add(jScrollPane1);
         jScrollPane1.setBounds(270, 450, 460, 180);
@@ -124,9 +125,19 @@ public class Top_Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-      
-
+      String descomprimido="";
+      String mostrar="";
+      prubea p = new prubea();
+      descomprimido= p.descomprimir("Top_10_Clientes");
+      String [] contenido0 = descomprimido.split(";");
+        for (String a : contenido0) {
+            String [] contenido1=a.split("/");
+            for (String b : contenido1) {
+                mostrar+=(b+" ");
+            }
+            mostrar+=("\n");
+        }
+      txtDescomprimir.setText(mostrar);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -139,7 +150,8 @@ public class Top_Clientes extends javax.swing.JFrame {
         txtcomprimir.setText(reporte);
         
         System.out.println(Para_reporte);
-        
+        prubea p = new prubea();
+        p.comprimir(Para_reporte, Nombre);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     
@@ -214,32 +226,14 @@ public class Top_Clientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JComboBox<String> L1;
-    public static javax.swing.JComboBox<String> L2;
-    public static javax.swing.JComboBox<String> L3;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtDescomprimir;
     private javax.swing.JTextArea txtcomprimir;
     // End of variables declaration//GEN-END:variables
 }

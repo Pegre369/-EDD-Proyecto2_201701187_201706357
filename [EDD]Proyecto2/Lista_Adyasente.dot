@@ -1,0 +1,60 @@
+digraph G {
+ rankdir=LR 
+ node[shape=box];
+ graph [ dpi = 300 ];
+Oviedo[ label = "Oviedo", fontsize=12]; 
+Bilbao[ label = "Bilbao", fontsize=12];
+Zaragoza[ label = "Zaragoza", fontsize=12];
+Madrid[ label = "Madrid", fontsize=12];
+Valladolid[ label = "Valladolid", fontsize=12];
+Barcelona[ label = "Barcelona", fontsize=12];
+Gerona[ label = "Gerona", fontsize=12];
+Valencia[ label = "Valencia", fontsize=12];
+Albacete[ label = "Albacete", fontsize=12];
+Badajoz[ label = "Badajoz", fontsize=12];
+Coruña[ label = "Coruña", fontsize=12];
+Vigo[ label = "Vigo", fontsize=12];
+Oviedo->Bilbao[constraint=false];
+Bilbao->Zaragoza[constraint=false];
+Zaragoza->Madrid[constraint=false];
+Madrid->Valladolid[constraint=false];
+Valladolid->Barcelona[constraint=false];
+Barcelona->Gerona[constraint=false];
+Gerona->Valencia[constraint=false];
+Valencia->Albacete[constraint=false];
+Albacete->Badajoz[constraint=false];
+Badajoz->Coruña[constraint=false];
+Coruña->Vigo[constraint=false];
+
+Bilbao1[ label = "Bilbao", fontsize=12]; 
+Zaragoza2[ label = "Zaragoza", fontsize=12]; 
+Madrid3[ label = "Madrid", fontsize=12]; 
+Valladolid4[ label = "Valladolid", fontsize=12]; 
+Barcelona5[ label = "Barcelona", fontsize=12]; 
+Madrid6[ label = "Madrid", fontsize=12]; 
+Albacete7[ label = "Albacete", fontsize=12]; 
+Badajoz8[ label = "Badajoz", fontsize=12]; 
+Madrid9[ label = "Madrid", fontsize=12]; 
+Coruña10[ label = "Coruña", fontsize=12]; 
+Gerona11[ label = "Gerona", fontsize=12]; 
+Valencia12[ label = "Valencia", fontsize=12]; 
+Valencia13[ label = "Valencia", fontsize=12]; 
+Vigo14[ label = "Vigo", fontsize=12]; 
+Valladolid15[ label = "Valladolid", fontsize=12]; 
+Oviedo->Bilbao1;
+Bilbao->Zaragoza2;
+Zaragoza2->Madrid3;
+Madrid3->Valladolid4;
+Zaragoza->Barcelona5;
+Barcelona5->Madrid6;
+Madrid->Albacete7;
+Albacete7->Badajoz8;
+Valladolid->Madrid9;
+Madrid9->Coruña10;
+Barcelona->Gerona11;
+Gerona11->Valencia12;
+Albacete->Valencia13;
+Coruña->Vigo14;
+Vigo->Valladolid15;
+
+}
