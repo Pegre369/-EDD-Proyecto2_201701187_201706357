@@ -1,0 +1,4 @@
+digraph G { 
+ graph [ dpi = 300 ];
+ rankdir=TB;
+node [shape = record, style=filled, fillcolor=gray76]; }
