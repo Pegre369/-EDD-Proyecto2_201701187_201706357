@@ -410,6 +410,23 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         //List_Vertice.Ruta(Recorridos, "Oviedo", "Madrid", Lista_Vertice.poss);
         this.vehiculoRoot=this.vehiculoRoot.getRoot();
         this.graficarC(this.vehiculoRoot.obtenerGrafo(this.vehiculoRoot), "ArbolB_Vehiculos");
+        
+        try {
+            Thread.sleep(100);
+            try {
+
+              File objetofile = new File ("ArbolB_Vehiculos.png");
+              Desktop.getDesktop().open(objetofile);
+
+       }catch (IOException ex) {
+
+              System.out.println(ex);
+
+       }
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Pantalla_Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         System.out.println("");
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
@@ -504,19 +521,29 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-   /*     try {
 
-            File objetofile = new File ("Lista_Rutas.png");
+    String asd=this.tablaHash.cuerpodot();
+        System.out.println("asd");
+     this.graficarC(asd, "Tabla_Hash");
+     
+      try {
+          Thread.sleep(100);
+          try {
+
+            File objetofile = new File ("Tabla_Hash.png");
             Desktop.getDesktop().open(objetofile);
 
      }catch (IOException ex) {
 
             System.out.println(ex);
 
-     }*/
-    String asd=this.tablaHash.cuerpodot();
-        System.out.println("asd");
-     this.graficarC(asd, "Tabla_Hash");
+     }
+      } catch (InterruptedException ex) {
+          Logger.getLogger(Pantalla_Principal.class.getName()).log(Level.SEVERE, null, ex);
+      }
+     
+         
+     
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
