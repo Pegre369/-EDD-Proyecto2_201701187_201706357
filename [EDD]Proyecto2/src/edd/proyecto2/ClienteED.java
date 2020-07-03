@@ -7,6 +7,7 @@ package edd.proyecto2;
 
 import Nodos.NodoLDC;
 import java.math.BigInteger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -209,6 +210,7 @@ public class ClienteED extends javax.swing.JFrame {
             temp.cliente.setGenero(txtGenero.getText());
             temp.cliente.setNombre(txtNombre.getText());
             temp.cliente.setTelefono(Integer.valueOf(txtTelefono.getText()));
+             JOptionPane.showMessageDialog(null, "Editado cone xito");
         }else{
             System.out.println("No se encontro dpi");
         }
@@ -242,6 +244,7 @@ public class ClienteED extends javax.swing.JFrame {
         NodoLDC temp = Pantalla_Principal.tablaHash.buscarCliente(dpi);
         if(temp!=null){
             Pantalla_Principal.tablaHash.indices[dpi.mod(BigInteger.valueOf(Pantalla_Principal.tablaHash.tamaño)).intValue()].elimnar(temp);
+             JOptionPane.showMessageDialog(null, "Elimado con exito");
         }else{
             System.out.println("No se encontro dpi");
         }

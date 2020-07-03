@@ -167,7 +167,7 @@ public class InsertarCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Pantalla_Principal.tablaHash.insertar(new BigInteger(txtDpi.getText()), txtNombre.getText(), txtApellido.getText(), txtGenero.getText(), txtFecha.getText(), Integer.valueOf(txtTelefono.getText()), txtDireccion.getText());
-        JOptionPane.showMessageDialog(null, "Carga Masiva Realizada");
+        JOptionPane.showMessageDialog(null, "Ingreso hecho");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

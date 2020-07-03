@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.math.BigInteger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -225,6 +226,7 @@ public class Vehiculos extends javax.swing.JFrame {
      if(temp==null){
          root=this.root.Insertar( new Vehiculo(Placa, Marca, Modelo,  anio,  Color,  Precio,  Transmision));
          System.out.println("Vehiculo Registrado");
+          JOptionPane.showMessageDialog(null, "Vehiculo Registrado");
          this.root.imprimirArbol(root);
      }else{
          //Aqui va un mensaje emergente
