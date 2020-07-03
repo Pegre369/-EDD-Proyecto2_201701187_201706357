@@ -632,6 +632,21 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         
         this.graficarC(cuerpoG, "Reporte_General");
     
+        try {
+          Thread.sleep(100);
+          try {
+
+            File objetofile = new File ("Reporte_General.png");
+            Desktop.getDesktop().open(objetofile);
+
+     }catch (IOException ex) {
+
+            System.out.println(ex);
+
+     }
+      } catch (InterruptedException ex) {
+          Logger.getLogger(Pantalla_Principal.class.getName()).log(Level.SEVERE, null, ex);
+      }
         
     }//GEN-LAST:event_jMenuItem23ActionPerformed
 
