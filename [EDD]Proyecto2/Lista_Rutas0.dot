@@ -8,10 +8,7 @@ Bilbao[ label = "Bilbao
 304", fontsize=12];
 Zaragoza[ label = "Zaragoza
 628", fontsize=12];
-Barcelona[ label = "Barcelona
-924", fontsize=12];
 Oviedo->Bilbao;
 Bilbao->Zaragoza;
-Zaragoza->Barcelona;
 
 }

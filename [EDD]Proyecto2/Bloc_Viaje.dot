@@ -2,20 +2,20 @@ digraph G {
  rankdir=LR 
  node[shape=box];
 graph [ dpi = 300 ];
-Dc69bc8e249000c0b7f6f5a018fafa259[label="c69bc8e249000c0b7f6f5a018fafa259
-Cliente: AAA0
+D05b369be77d46f0caac944151f8dfce1[label="05b369be77d46f0caac944151f8dfce1
+Cliente: 47AAA
 Conductor: Fernanda
-Oviedo
-Madrid
-02/07/20"];
-D3d8924e0678bf9f6f21eed170cb49f86[label="3d8924e0678bf9f6f21eed170cb49f86
-Cliente: AAA0
-Conductor: Fernanda
-Oviedo
+Bilbao
 Barcelona
 02/07/20"];
-Dc69bc8e249000c0b7f6f5a018fafa259->D3d8924e0678bf9f6f21eed170cb49f86
-Dc69bc8e249000c0b7f6f5a018fafa259->D3d8924e0678bf9f6f21eed170cb49f86
-D3d8924e0678bf9f6f21eed170cb49f86->Dc69bc8e249000c0b7f6f5a018fafa259
-D3d8924e0678bf9f6f21eed170cb49f86->Dc69bc8e249000c0b7f6f5a018fafa259
+D710c600997b0e330cc76c505c2d39072[label="710c600997b0e330cc76c505c2d39072
+Cliente: AAA47
+Conductor: Rolando
+Oviedo
+Zaragoza
+02/07/20"];
+D05b369be77d46f0caac944151f8dfce1->D710c600997b0e330cc76c505c2d39072
+D05b369be77d46f0caac944151f8dfce1->D710c600997b0e330cc76c505c2d39072
+D710c600997b0e330cc76c505c2d39072->D05b369be77d46f0caac944151f8dfce1
+D710c600997b0e330cc76c505c2d39072->D05b369be77d46f0caac944151f8dfce1
 }

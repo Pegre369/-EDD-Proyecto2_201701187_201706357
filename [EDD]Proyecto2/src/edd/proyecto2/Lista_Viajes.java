@@ -119,7 +119,7 @@ public class Lista_Viajes {
         
     }
     
-     private String cuerpo(Nodo_Viaje n){
+     public String cuerpo(Nodo_Viaje n){
         
         String body="";
         Nodo_Viaje aux = n;

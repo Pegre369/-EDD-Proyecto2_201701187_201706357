@@ -253,7 +253,7 @@ public class Lista_Conductores {
     }
     
     
-     private String cuerpo(Conductor n){
+     public String cuerpo(Conductor n){
         
         String body="";
         Conductor aux = n;

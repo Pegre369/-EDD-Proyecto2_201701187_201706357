@@ -15,6 +15,7 @@ public class Vehiculo {
     private String Precio;
     private String Transmision;
     private int Contador;
+    public String nodoP="";
     
     public Vehiculo(String Placa, String Marca, String Modelo, int anio, String Color, String Precio, String Transmision) {
         this.Placa = Placa;
