@@ -1,6 +1,7 @@
 
 package edd.proyecto2;
 
+import Nodos.Nodo_Viaje;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.io.File;
@@ -89,6 +90,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem23 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -360,6 +362,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem15);
 
+        jMenuItem23.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jMenuItem23.setText("ReporteG");
+        jMenuItem23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem23ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem23);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -587,7 +598,63 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jMenuItem22ActionPerformed
 
-     
+    private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
+        // TODO add your handling code here:
+        String cuerpoG="graph [ dpi = 50 ] \n";
+        this.vehiculoRoot=this.vehiculoRoot.getRoot();
+        String arbol = this.vehiculoRoot.obtenerGrafo(this.vehiculoRoot);
+        String tablaH= this.tablaHash.cuerpodot();
+        String blockC = List_viaje.cuerpo(List_viaje.Cabeza);
+        String rutaV="";
+        String conduC = List_Conductores.cuerpo(List_Conductores.Cabeza);
+        
+        cuerpoG+="subgraph cluster_0 {\n";
+        cuerpoG+=arbol;
+        cuerpoG+="\n}\n";
+        
+        cuerpoG+="subgraph cluster_1 {\n";
+        cuerpoG+=tablaH;
+        cuerpoG+="\n}\n";
+        
+        cuerpoG+="subgraph cluster_2 {\n";
+        cuerpoG+=blockC;
+        cuerpoG+="\n}\n";
+        
+        cuerpoG+="subgraph cluster_3 {\n";
+        cuerpoG+=rutaV;
+        cuerpoG+="\n}\n";
+        
+        cuerpoG+="subgraph cluster_4 {\n";
+        cuerpoG+=conduC;
+        cuerpoG+="\n}\n";
+        
+        cuerpoG+=cuerpoG2();
+        
+        this.graficarC(cuerpoG, "Reporte_General");
+    
+        
+    }//GEN-LAST:event_jMenuItem23ActionPerformed
+
+    public String cuerpoG2(){
+        String temp="";
+        int conta=5;
+        Nodo_Viaje aux = List_viaje.Cabeza;
+            
+            do{
+                
+                temp+="\n D"+aux.getLlaveMD5()+" -> \""+aux.getCarro().nodoP+"\" \n";
+                temp+="\n D"+aux.getLlaveMD5()+" -> \""+aux.getCliente().cliente.getDpi()+"\" \n";
+                temp+="\n D"+aux.getLlaveMD5()+" -> "+aux.getConductor().getDpi().toString()+" \n";
+                temp+="subgraph cluster_"+conta+"{\n";
+                temp+=aux.getRecorido().cuerpo(aux.getRecorido().Cabeza);
+                temp+="\n}\n";
+                temp+="\n D"+aux.getLlaveMD5()+" -> "+aux.getRecorido().Cabeza.getLugar_Origen()+" \n";
+                aux = aux.Siguiente;
+            }while(aux!=List_viaje.Cola);
+        
+        return temp;
+    } 
+    
     public void graficarC(String cuerpo, String nombre){
          String contenido;
          contenido = "digraph G { \n graph [ dpi = 300 ];\n";
@@ -682,6 +749,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
+    private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

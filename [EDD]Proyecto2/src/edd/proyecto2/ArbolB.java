@@ -276,6 +276,7 @@ public class ArbolB {
         if(nodo.values.size()>0){
             this.cuerpoArbolS+="\n \""+nodo.toString()+"\" [ label =\"<C0>";
             for (Vehiculo ve : nodo.values) {
+                ve.nodoP=nodo.toString();
                 this.cuerpoArbolS+="| "+ve.getPlaca()+" \\n "+ve.getMarca()+"; "+ve.getModelo()+"; "+ve.getPrecio()+" |";
                 contP++;
                 this.cuerpoArbolS+=" <C"+contP+"> ";
